@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" preserveAspectRatio="none" fill="none">
+  <!--
+    Hacienda Solano — Wave Divider 01
+    Shape: onda suave horizontal, Deep Green 12% + 6%
+    Uso: separador entre secciones, transiciones entre bloques
+    El viewBox 1200×60 + preserveAspectRatio="none" permite
+    que el divider escale horizontalmente al 100% del contenedor.
+  -->
+  <path
+    d="M0 30
+       C150 10, 300 50, 600 30
+       C900 10, 1050 50, 1200 30
+       L1200 60 L0 60 Z"
+    fill="#1A331C"
+    fill-opacity="0.12"
+  />
+  <path
+    d="M0 35
+       C200 55, 400 20, 600 35
+       C800 50, 1000 20, 1200 35
+       L1200 60 L0 60 Z"
+    fill="#1A331C"
+    fill-opacity="0.06"
+  />
+</svg>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" data-color-scheme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacienda Solano — Card · Photo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Manrope:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../brand/brand-tokens.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="card.css" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-primary);
+      font-family: var(--font-body);
+      padding: 40px 20px;
+    }
+
+    .demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .demo-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(26, 51, 28, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <span class="demo-label">Card · Photo</span>
+
+    <article class="hs-card hs-card--photo">
+      <div class="hs-card__image">
+        <!--
+          Reemplazar src con foto real del proyecto.
+          Ejemplo: ../../../photos/alojamiento/bungalow-01.jpg
+        -->
+        <img
+          src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&h=480&fit=crop"
+          alt="Bungalow rodeado de vegetación"
+        />
+        <div class="hs-card__overlay"></div>
+      </div>
+      <div class="hs-card__body">
+        <h3 class="hs-card__title">Bungalow Familiar</h3>
+        <p class="hs-card__text">
+          Espacio para 4 personas con vista al jardín y terraza privada.
+        </p>
+        <button class="hs-btn hs-btn--primary">Reservar</button>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* ============================================================
+   Hacienda Solano — Brand Design Tokens (CSS Custom Properties)
+   Version 1.0
+   ============================================================ */
+
+/* --- Raw color palette --- */
+:root {
+  --color-deep-green:  #1A331C;
+  --color-brand-green: #2D5A31;
+  --color-sun-accent:  #FDC859;
+  --color-warm-gold:   #EEBB2D;
+  --color-warm-cream:  #F5F1E6;
+  --color-white:       #FFFFFF;
+
+  /* Typography */
+  --font-title:  "Fraunces", Georgia, serif;
+  --font-body:   "Manrope", system-ui, -apple-system, sans-serif;
+  --leading-title: 1.1;
+  --leading-body:  1.5;
+}
+
+/* --- Light mode (default) --- */
+:root {
+  color-scheme: light;
+
+  --bg-primary:    var(--color-warm-cream);
+  --bg-surface:    var(--color-white);
+  --text-primary:  var(--color-deep-green);
+  --text-title:    var(--color-deep-green);
+  --text-accent:   var(--color-brand-green);
+  --highlight:     var(--color-sun-accent);
+  --border-color:  var(--color-warm-gold);
+}
+
+/* --- Dark mode --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --bg-primary:    var(--color-deep-green);
+    --bg-surface:    #0F1F11;
+    --text-primary:  var(--color-warm-cream);
+    --text-title:    var(--color-warm-cream);
+    --text-accent:   var(--color-sun-accent);
+    --highlight:     var(--color-warm-gold);
+    --border-color:  var(--color-brand-green);
+  }
+}
+
+/* Explicit class overrides (manual toggle) */
+[data-color-scheme="light"] {
+  color-scheme: light;
+  --bg-primary:    var(--color-warm-cream);
+  --bg-surface:    var(--color-white);
+  --text-primary:  var(--color-deep-green);
+  --text-title:    var(--color-deep-green);
+  --text-accent:   var(--color-brand-green);
+  --highlight:     var(--color-sun-accent);
+  --border-color:  var(--color-warm-gold);
+}
+
+[data-color-scheme="dark"] {
+  color-scheme: dark;
+  --bg-primary:    var(--color-deep-green);
+  --bg-surface:    #0F1F11;
+  --text-primary:  var(--color-warm-cream);
+  --text-title:    var(--color-warm-cream);
+  --text-accent:   var(--color-sun-accent);
+  --highlight:     var(--color-warm-gold);
+  --border-color:  var(--color-brand-green);
+}

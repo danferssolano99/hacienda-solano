@@ -1,0 +1,21 @@
+- main [ref=e2]:
+  - img "Alojamiento de Hacienda Solano rodeado de naturaleza" [ref=e4]
+  - generic [ref=e6]: Hacienda Solano
+  - generic [ref=e9]:
+    - paragraph [ref=e10]: Escapada con estilo
+    - heading "Desconectá en grande" [level=1] [ref=e11]
+    - paragraph [ref=e12]: Habitaciones, bungalows y glamping en un entorno pensado para bajar el ritmo y disfrutar la experiencia completa.
+    - generic [ref=e13]:
+      - generic [ref=e14]: Naturaleza real
+      - generic [ref=e15]: Ambientes privados
+      - generic [ref=e16]: Piscina y descanso
+  - complementary [ref=e17]:
+    - paragraph [ref=e18]: Alojamiento
+    - heading "Tu pausa empieza acá" [level=2] [ref=e19]
+    - paragraph [ref=e20]: Viví una estadía cálida, elegante y rodeada de verde.
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Reserva abierta
+      - paragraph [ref=e24]: Consultá disponibilidad para tu próxima estadía
+    - generic [ref=e25]: Reservá hoy ↗
+  - generic [ref=e26]: Post 1080 x 1350 · Concepto alto impacto

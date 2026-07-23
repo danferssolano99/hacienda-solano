@@ -1,0 +1,26 @@
+- main [ref=e2]:
+  - img "Alojamiento y piscina Hacienda Solano" [ref=e3]
+  - generic [ref=e6]:
+    - generic [ref=e7]: Hacienda Solano
+    - generic [ref=e10]:
+      - paragraph [ref=e11]: Alojamiento
+      - heading "Dormí rodeado de calma" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Habitaciones, bungalows y glamping para descansar, compartir y disfrutar del aire libre.
+      - generic [ref=e14]:
+        - generic [ref=e15]: Habitaciones
+        - generic [ref=e16]: Bungalows
+        - generic [ref=e17]: Glamping
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: Reservas por WhatsApp
+        - link "905 433 158" [ref=e21] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e22]: Panamericana Norte · Paiján
+      - generic [ref=e23]:
+        - generic [ref=e24]: Descansá mejor
+        - generic [ref=e25]: Un espacio cálido para reconectar y disfrutar sin apuro.
+  - complementary [ref=e26]:
+    - generic [ref=e27]: Experiencia
+    - generic [ref=e28]: Confort natural
+    - generic [ref=e29]: Alojamiento y entorno al aire libre en una sola escapada.
+  - generic [ref=e30]: Banner 1920×1080 con foto real de alojamiento y piscina

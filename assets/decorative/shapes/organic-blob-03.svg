@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none">
+  <!--
+    Hacienda Solano — Organic Blob 03 "Puddle Form"
+    Shape: masa orgánica central con múltiples lóbulos irregulares.
+    Como una mancha de agua o una ameba — más redonda, sin dirección dominante.
+    Útil para composiciones centradas o como ancla visual en layouts simétricos.
+    28 puntos de control. Lóbulos de tamaño variable (4 pronunciados, 3 sutiles).
+    Parte de la subfamilia orgánica boho chic — Nivel 2.
+  -->
+  <path
+    d="
+      M 250 378
+      C 310 382, 365 370, 400 340
+      C 435 310, 462 275, 468 235
+      C 474 195, 468 158, 452 128
+      C 438 102, 415 78, 390 62
+      C 365 46,  332 35, 295 32
+      C 255 28,  210 35, 172 48
+      C 140 58,  112 78, 92 105
+      C 72 132,  58 168, 52 205
+      C 46 242,  48 282, 65 312
+      C 80 338, 108 358, 142 368
+      C 175 376, 210 376, 250 378 Z
+    "
+    fill="#1A331C"
+    fill-opacity="0.06"
+  />
+  <!-- Internal texture: subtle lobe divisions (like cell walls in an amoeba) -->
+  <path
+    d="
+      M 250 35
+      C 260 100, 310 160, 400 200
+      M 100 180
+      C 180 200, 250 240, 300 280
+      M 180 60
+      C 220 120, 240 180, 250 250
+    "
+    stroke="#1A331C"
+    stroke-opacity="0.025"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+  />
+</svg>

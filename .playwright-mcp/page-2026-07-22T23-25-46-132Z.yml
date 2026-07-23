@@ -1,0 +1,30 @@
+- main [ref=e2]:
+  - img "Concepto visual de un domo geodésico iluminado bajo un cielo estrellado" [ref=e3]
+  - generic [ref=e5]:
+    - img "Hacienda Solano" [ref=e6]
+    - paragraph [ref=e7]: Concepto interno
+  - generic [ref=e8]:
+    - paragraph [ref=e9]: Una noche fuera de lo común
+    - heading "Desconecta bajo las estrellas." [level=1] [ref=e10]
+    - paragraph [ref=e11]: "La experiencia más exclusiva de Hacienda Solano: un domo geodésico construido completamente en madera."
+  - region "Plan Soñador y reserva" [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - paragraph [ref=e15]: Plan
+        - heading "Soñador" [level=2] [ref=e16]
+      - paragraph [ref=e17]:
+        - strong [ref=e18]: S/ 180
+        - generic [ref=e19]: por noche · 2 personas
+    - generic "Servicios incluidos" [ref=e20]:
+      - generic [ref=e21]: Smart TV
+      - generic [ref=e22]: Cocina parrillera
+      - generic [ref=e23]: Kit de fogata
+      - generic [ref=e24]: Cine al aire libre
+      - generic [ref=e25]: Acceso a piscina
+      - generic [ref=e26]: Desayuno incluido
+    - generic [ref=e27]:
+      - paragraph [ref=e28]: 4 personas · S/ 240
+      - paragraph [ref=e29]:
+        - text: Reserva por WhatsApp
+        - generic [ref=e30]: +51 905 433 158
+  - generic [ref=e31]: Concepto interno · Story Plan Soñador · 1080 × 1920

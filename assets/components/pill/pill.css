@@ -1,0 +1,55 @@
+/* ============================================================
+   Hacienda Solano — Pill Component
+   Depends on: ../../../brand/brand-tokens.css
+   Tokens ref: brand/structural-tokens.md §7
+   ============================================================ */
+
+.hs-pill {
+  --pill-radius: 999px;
+  --pill-border: 1px solid rgba(45, 90, 49, 0.08);
+  --pill-padding-y: 8px;
+  --pill-padding-x: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: var(--pill-padding-y) var(--pill-padding-x);
+  border-radius: var(--pill-radius);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+/* ---- Outline — Etiqueta normal / filtro no seleccionado ---- */
+
+.hs-pill--outline {
+  border: var(--pill-border);
+  background: rgba(245, 241, 230, 0.60);
+  color: var(--color-deep-green);
+}
+
+.hs-pill--outline:hover {
+  background: rgba(245, 241, 230, 0.85);
+  cursor: pointer;
+}
+
+/* ---- Active — Filtro seleccionado / badge destacado ---- */
+
+.hs-pill--active {
+  border: var(--pill-border);
+  background: var(--color-sun-accent);
+  color: var(--color-deep-green);
+}
+
+/* ---- Icon inside pill ---- */
+
+.hs-pill svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es" data-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1" />
+    <title>Hacienda Solano — Domo geodésico</title>
+    <link rel="stylesheet" href="../brand/brand-tokens.css" />
+    <link rel="stylesheet" href="../assets/export.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #1a331c;
+        --cream: #f5f1e6;
+        --sand: #e7dccb;
+        --terracotta: #b86f4d;
+        --muted: rgba(26, 51, 28, 0.68);
+      }
+
+      * { box-sizing: border-box; margin: 0; }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: var(--sand);
+        font-family: var(--font-body, "Manrope", sans-serif);
+      }
+
+      .banner {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        isolation: isolate;
+        color: var(--ink);
+        background: var(--cream);
+        box-shadow: 0 34px 90px rgba(53, 40, 24, 0.18);
+      }
+
+      .photo {
+        position: absolute;
+        inset: 0 0 0 42%;
+        z-index: -2;
+        width: 58%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(0.88) contrast(1.03) brightness(0.92);
+      }
+
+      .photo-wash {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, var(--cream) 0%, rgba(245, 241, 230, 0.98) 34%, rgba(245, 241, 230, 0.48) 54%, rgba(26, 51, 28, 0.08) 78%, rgba(26, 51, 28, 0.28) 100%),
+          linear-gradient(0deg, rgba(18, 37, 20, 0.18), transparent 38%);
+      }
+
+      .texture-line {
+        position: absolute;
+        top: -210px;
+        right: 340px;
+        width: 620px;
+        height: 620px;
+        border: 1px solid rgba(245, 241, 230, 0.4);
+        border-radius: 50%;
+        transform: rotate(-24deg);
+      }
+
+      .texture-line::before,
+      .texture-line::after {
+        content: "";
+        position: absolute;
+        inset: 74px;
+        border: 1px solid rgba(245, 241, 230, 0.26);
+        border-radius: 50%;
+      }
+
+      .texture-line::after {
+        inset: 154px 4px 154px 4px;
+        transform: rotate(50deg);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 920px;
+        height: 100%;
+        padding: 92px 0 86px 112px;
+      }
+
+      .brand-row {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .logo { width: 252px; height: auto; }
+
+      .section {
+        padding-left: 24px;
+        border-left: 1px solid rgba(26, 51, 28, 0.2);
+      }
+
+      .section-label,
+      .eyebrow,
+      .footer-label {
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .section-label { font-size: 16px; }
+
+      .section-subtitle {
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: 20px;
+      }
+
+      .hero { max-width: 760px; margin-top: 150px; }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--terracotta);
+        font-size: 18px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 48px;
+        height: 1px;
+        background: currentColor;
+      }
+
+      h1 {
+        max-width: 750px;
+        margin-top: 28px;
+        font-family: var(--font-title, "Fraunces", serif);
+        font-size: 112px;
+        font-weight: 600;
+        line-height: 0.94;
+        letter-spacing: -0.055em;
+        text-wrap: balance;
+      }
+
+      .supporting {
+        max-width: 610px;
+        margin-top: 34px;
+        color: var(--muted);
+        font-size: 29px;
+        line-height: 1.42;
+      }
+
+      .footer {
+        display: flex;
+        align-items: end;
+        gap: 48px;
+        width: 800px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(26, 51, 28, 0.18);
+      }
+
+      .footer-copy { max-width: 395px; }
+
+      .footer-label {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .footer-text {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 21px;
+        line-height: 1.42;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+        padding: 21px 28px;
+        border-radius: 999px;
+        background: var(--ink);
+        color: var(--cream);
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        box-shadow: 0 16px 34px rgba(26, 51, 28, 0.18);
+      }
+
+      .cta::after { content: "↗"; font-size: 27px; line-height: 1; }
+
+      .guide {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        padding: 8px 11px;
+        border-radius: 8px;
+        background: rgba(26, 51, 28, 0.82);
+        color: white;
+        font-size: 12px;
+      }
+    </style>
+    <script src="../assets/export.js" defer></script>
+  </head>
+  <body>
+    <main class="banner" data-export-canvas data-export-width="1920" data-export-height="1080">
+      <img class="photo" src="../assets/photos/alojamiento/Domo.jpeg" alt="Domo geodésico de Hacienda Solano" />
+      <div class="photo-wash" aria-hidden="true"></div>
+      <div class="texture-line" aria-hidden="true"></div>
+
+      <section class="content">
+        <div>
+          <div class="brand-row">
+            <img class="logo" src="../assets/logo/primary/Logotipo.svg" alt="Hacienda Solano" />
+            <div class="section">
+              <p class="section-label">Nuevo alojamiento</p>
+              <p class="section-subtitle">Domo geodésico</p>
+            </div>
+          </div>
+
+          <div class="hero">
+            <p class="eyebrow">Una pausa fuera de lo común</p>
+            <h1>Tu refugio bajo el cielo abierto.</h1>
+            <p class="supporting">Viví una estadía diferente, rodeado de naturaleza, calma y la hospitalidad de Hacienda Solano.</p>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="footer-copy">
+            <p class="footer-label">Domo geodésico Hacienda Solano</p>
+            <p class="footer-text">Una experiencia íntima para bajar el ritmo y volver a conectar.</p>
+          </div>
+          <p class="cta">Conocé el domo</p>
+        </div>
+      </section>
+
+      <div class="guide" data-export-ui>Banner domo geodésico · 1920 × 1080 · v01</div>
+    </main>
+  </body>
+</html>

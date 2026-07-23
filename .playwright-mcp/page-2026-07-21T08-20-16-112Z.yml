@@ -1,0 +1,21 @@
+- main [ref=f2e2]:
+  - img "Composición de alojamiento Hacienda Solano" [ref=f2e3]
+  - generic [ref=f2e6]:
+    - generic [ref=f2e7]: Hacienda Solano
+    - generic [ref=f2e10]:
+      - paragraph [ref=f2e11]: Alojamiento
+      - heading "Escapate al descanso" [level=1] [ref=f2e12]
+      - paragraph [ref=f2e13]: Bungalows, habitaciones y glamping en un espacio cálido para desconectarte y compartir.
+      - generic [ref=f2e14]:
+        - generic [ref=f2e15]: Bungalows
+        - generic [ref=f2e16]: Habitaciones
+        - generic [ref=f2e17]: Glamping
+    - generic [ref=f2e18]:
+      - generic [ref=f2e19]:
+        - generic [ref=f2e20]: Reservas por WhatsApp
+        - link "905 433 158" [ref=f2e21] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=f2e22]: Panamericana Norte · Paiján
+      - generic [ref=f2e23]:
+        - generic [ref=f2e24]: Hacienda Solano
+        - generic [ref=f2e25]: Un lugar para descansar, reconectar y disfrutar al aire libre.

@@ -1,0 +1,154 @@
+/* ============================================================
+   Hacienda Solano — Card Component
+   Depends on: ../../../brand/brand-tokens.css
+   Tokens ref: brand/structural-tokens.md §§1,2,4,5,6,10
+   ============================================================ */
+
+.hs-card {
+  --card-radius: 24px;
+  --card-padding: 24px;
+  --card-max-width: 400px;
+  --card-shadow: 0 4px 16px rgba(26, 51, 28, 0.06);
+  --card-border: 1px solid rgba(26, 51, 28, 0.08);
+  --card-title-gap: 10px;
+  --card-body-gap: 16px;
+  --card-cta-margin: 16px;
+
+  max-width: var(--card-max-width);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+/* ---- Shared sub-elements ---- */
+
+.hs-card__image {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hs-card__image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.hs-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(
+    0deg,
+    rgba(26, 51, 28, 0.25) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.hs-card__body {
+  padding: var(--card-padding);
+}
+
+.hs-card__title {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-deep-green);
+  margin: 0 0 var(--card-title-gap) 0;
+  line-height: var(--leading-title, 1.1);
+}
+
+.hs-card__text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(26, 51, 28, 0.70);
+  margin: 0 0 var(--card-cta-margin) 0;
+  line-height: var(--leading-body, 1.5);
+  max-width: 640px;
+}
+
+.hs-card__author {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(26, 51, 28, 0.50);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* ---- Photo Card — Servicios, alojamiento, experiencias ---- */
+
+.hs-card--photo {
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  background: var(--color-warm-cream);
+}
+
+/* ---- Text Card — Testimonios, features, info sin foto ---- */
+
+.hs-card--text {
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  background: var(--color-warm-cream);
+}
+
+/* ---- Glass Card — Información flotante (solo digital) ----
+   ⚠️ No usar en print ni piezas de larga distancia.
+   Ver brand/structural-tokens.md §6.                    */
+
+.hs-card--glass {
+  background: rgba(26, 51, 28, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hs-card--glass .hs-card__title {
+  color: var(--color-warm-cream);
+}
+
+.hs-card--glass .hs-card__text {
+  color: rgba(245, 241, 230, 0.85);
+}
+
+.hs-card--glass .hs-card__author {
+  color: rgba(245, 241, 230, 0.60);
+}
+
+/* ---- Organic Card — Subfamilia boho chic ----
+   Extensión expresiva de la card base. Usa el mismo
+   contrato (hs-card__body, hs-card__title, hs-card__text)
+   pero aplica geometría asimétrica y ornamentos de palma.
+   No reemplaza las variantes estructurales; convive con ellas.
+   Ver brand/structural-tokens.md §10 para lógica de contenedores. */
+
+.hs-card--organic {
+  --card-radius-tl: 32px;
+  --card-radius-tr: 22px;
+  --card-radius-br: 30px;
+  --card-radius-bl: 20px;
+
+  border-radius:
+    var(--card-radius-tl)
+    var(--card-radius-tr)
+    var(--card-radius-br)
+    var(--card-radius-bl);
+  border: 1.5px solid rgba(26, 51, 28, 0.10);
+  box-shadow: 0 8px 32px rgba(26, 51, 28, 0.07);
+  background: var(--color-warm-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Body stays above surrounding composition */
+.hs-card--organic .hs-card__body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Title with subtle warmth */
+.hs-card--organic .hs-card__title {
+  color: var(--color-deep-green);
+}

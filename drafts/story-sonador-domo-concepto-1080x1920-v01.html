@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es" data-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hacienda Solano - Concepto story Plan Sonador</title>
+    <link rel="stylesheet" href="../brand/brand-tokens.css" />
+    <link rel="stylesheet" href="../assets/export.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #1a331c;
+        --cream: #f5f1e6;
+        --gold: #fdc859;
+        --gold-deep: #eebb2d;
+        --muted: rgba(26, 51, 28, 0.68);
+      }
+
+      * { box-sizing: border-box; margin: 0; }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #b9a98e;
+        font-family: var(--font-body, "Manrope", sans-serif);
+      }
+
+      .story {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        isolation: isolate;
+        color: var(--cream);
+        background: var(--ink);
+        box-shadow: 0 28px 80px rgba(26, 51, 28, 0.28);
+      }
+
+      .visual {
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center center;
+        filter: saturate(0.88) contrast(1.03) brightness(0.86);
+      }
+
+      .wash {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          linear-gradient(180deg, rgba(26, 51, 28, 0.62) 0%, rgba(26, 51, 28, 0.05) 34%, rgba(26, 51, 28, 0.14) 53%, rgba(26, 51, 28, 0.90) 77%, rgba(26, 51, 28, 0.98) 100%),
+          linear-gradient(90deg, rgba(26, 51, 28, 0.26), transparent 52%, rgba(26, 51, 28, 0.18));
+      }
+
+      .topbar {
+        position: absolute;
+        z-index: 2;
+        top: 72px;
+        left: 72px;
+        right: 72px;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+      }
+
+      .logo {
+        width: 250px;
+        height: auto;
+        filter: brightness(0) invert(1);
+      }
+
+      .concept-label {
+        padding: 10px 14px;
+        border: 1px solid rgba(245, 241, 230, 0.54);
+        border-radius: 999px;
+        color: rgba(245, 241, 230, 0.92);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        position: absolute;
+        z-index: 2;
+        top: 360px;
+        left: 72px;
+        right: 72px;
+      }
+
+      .eyebrow {
+        color: var(--gold);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 790px;
+        margin-top: 24px;
+        font-family: var(--font-title, "Fraunces", serif);
+        font-size: 112px;
+        font-weight: 600;
+        line-height: 0.92;
+        letter-spacing: -0.055em;
+        text-wrap: balance;
+      }
+
+      .supporting {
+        max-width: 620px;
+        margin-top: 28px;
+        color: rgba(245, 241, 230, 0.90);
+        font-size: 25px;
+        line-height: 1.42;
+        font-weight: 600;
+      }
+
+      .offer {
+        position: absolute;
+        z-index: 3;
+        right: 72px;
+        bottom: 70px;
+        left: 72px;
+        padding: 40px 44px 38px;
+        border: 1px solid rgba(245, 241, 230, 0.20);
+        border-radius: 24px;
+        background: rgba(245, 241, 230, 0.96);
+        color: var(--ink);
+        box-shadow: 0 20px 50px rgba(26, 51, 28, 0.22);
+      }
+
+      .offer-head,
+      .offer-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .kicker {
+        color: #2d5a31;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .offer-title {
+        margin-top: 8px;
+        font-family: var(--font-title, "Fraunces", serif);
+        font-size: 48px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .price {
+        color: #2d5a31;
+        text-align: right;
+      }
+
+      .price strong {
+        display: block;
+        color: var(--ink);
+        font-size: 42px;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .price span {
+        display: block;
+        margin-top: 7px;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .benefits {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px 16px;
+        margin-top: 28px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(26, 51, 28, 0.14);
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.28;
+        font-weight: 600;
+      }
+
+      .benefits span::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        margin: 0 9px 3px 0;
+        border-radius: 50%;
+        background: var(--gold-deep);
+      }
+
+      .offer-footer { margin-top: 30px; }
+
+      .capacity {
+        color: var(--muted);
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .cta {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        min-height: 58px;
+        padding: 0 28px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+        color: var(--ink);
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        box-shadow: 0 12px 24px rgba(238, 187, 45, 0.18);
+      }
+
+      .cta small {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+
+      .guide {
+        position: absolute;
+        z-index: 5;
+        top: 18px;
+        right: 18px;
+        padding: 8px 11px;
+        border-radius: 8px;
+        background: rgba(26, 51, 28, 0.82);
+        color: #fff;
+        font-size: 12px;
+      }
+
+      @media (max-width: 700px) {
+        body { padding: 0; }
+        .guide { display: none; }
+        .story { width: min(100vw, 540px); height: min(177.7778vw, 960px); }
+        .topbar { top: 5%; left: 6.7%; right: 6.7%; }
+        .logo { width: 28%; }
+        .concept-label { padding: 7px 10px; font-size: 7px; }
+        .hero { top: 23%; left: 6.7%; right: 6.7%; }
+        .eyebrow { font-size: 9px; letter-spacing: 0.14em; }
+        h1 { max-width: 90%; margin-top: 12px; font-size: clamp(48px, 10.4vw, 76px); }
+        .supporting { max-width: 72%; margin-top: 16px; font-size: clamp(12px, 2.3vw, 18px); }
+        .offer { right: 6.7%; bottom: 4%; left: 6.7%; padding: 5% 5.5%; border-radius: 18px; }
+        .kicker { font-size: 8px; }
+        .offer-title { font-size: clamp(24px, 5vw, 40px); }
+        .price strong { font-size: clamp(23px, 5vw, 38px); }
+        .price span { margin-top: 4px; font-size: 8px; }
+        .benefits { gap: 6px 10px; margin-top: 4%; padding-top: 4%; font-size: clamp(8px, 1.8vw, 13px); }
+        .benefits span::before { width: 4px; height: 4px; margin: 0 4px 2px 0; }
+        .offer-footer { gap: 10px; margin-top: 5%; }
+        .capacity { font-size: clamp(8px, 1.8vw, 12px); }
+        .cta { min-height: 34px; padding: 5px 13px; border-radius: 13px; font-size: clamp(8px, 1.7vw, 12px); }
+        .cta small { font-size: clamp(6px, 1.25vw, 9px); }
+      }
+    </style>
+    <script src="../assets/export.js" defer></script>
+  </head>
+  <body>
+    <main class="story" data-export-canvas data-export-width="1080" data-export-height="1920">
+      <img class="visual" src="../ChatGPT%20Image%2022%20jul%202026,%2006_21_05%20p.m..png" alt="Concepto visual de un domo geodésico iluminado bajo un cielo estrellado" />
+      <div class="wash" aria-hidden="true"></div>
+
+      <div class="topbar">
+        <img class="logo" src="../assets/logo/primary/Logotipo.svg" alt="Hacienda Solano" />
+        <p class="concept-label">Concepto interno</p>
+      </div>
+
+      <section class="hero">
+        <p class="eyebrow">Una noche fuera de lo común</p>
+        <h1>Desconecta bajo las estrellas.</h1>
+        <p class="supporting">La experiencia más exclusiva de Hacienda Solano: un domo geodésico construido completamente en madera.</p>
+      </section>
+
+      <section class="offer" aria-label="Plan Soñador y reserva">
+        <div class="offer-head">
+          <div>
+            <p class="kicker">Plan</p>
+            <h2 class="offer-title">Soñador</h2>
+          </div>
+          <p class="price"><strong>S/ 180</strong><span>por noche · 2 personas</span></p>
+        </div>
+
+        <div class="benefits" aria-label="Servicios incluidos">
+          <span>Smart TV</span>
+          <span>Cocina parrillera</span>
+          <span>Kit de fogata</span>
+          <span>Cine al aire libre</span>
+          <span>Acceso a piscina</span>
+          <span>Desayuno incluido</span>
+        </div>
+
+        <div class="offer-footer">
+          <p class="capacity">4 personas · S/ 240</p>
+          <p class="cta">Reserva por WhatsApp<small>+51 905 433 158</small></p>
+        </div>
+      </section>
+
+      <div class="guide" data-export-ui>Concepto interno · Story Plan Soñador · 1080 × 1920</div>
+    </main>
+  </body>
+</html>

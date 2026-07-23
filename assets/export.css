@@ -1,0 +1,73 @@
+/* Export contract shared by every production canvas. */
+html,
+body {
+  margin: 0;
+}
+
+[data-export-canvas] {
+  position: relative;
+}
+
+html[data-export-mode="export"],
+html[data-export-mode="export"] body {
+  width: var(--export-width);
+  height: var(--export-height);
+  min-width: var(--export-width);
+  min-height: var(--export-height);
+  overflow: hidden;
+}
+
+html[data-export-mode="export"] body {
+  display: block !important;
+  place-items: normal !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+html[data-export-mode="export"] [data-export-canvas] {
+  width: var(--export-width);
+  height: var(--export-height);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html[data-export-mode="export"] [data-export-ui] {
+  display: none !important;
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: var(--print-width) var(--print-height);
+  }
+
+  html,
+  body {
+    width: var(--print-width) !important;
+    height: var(--print-height) !important;
+    min-width: var(--print-width) !important;
+    min-height: var(--print-height) !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  html[data-export-mode="export"] body,
+  body {
+    display: block !important;
+    place-items: normal !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  html[data-export-mode="export"] [data-export-canvas],
+  [data-export-canvas] {
+    width: var(--print-width) !important;
+    height: var(--print-height) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  [data-export-ui] {
+    display: none !important;
+  }
+}

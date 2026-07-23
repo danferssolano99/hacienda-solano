@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es" data-color-scheme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacienda Solano — UI Lab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Manrope:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="brand/brand-tokens.css" />
+  <link rel="stylesheet" href="assets/components/button/button.css" />
+  <link rel="stylesheet" href="assets/components/pill/pill.css" />
+  <link rel="stylesheet" href="assets/components/card/card.css" />
+
+  <style>
+    :root {
+      --container: 1200px;
+      --section-gap: 72px;
+      --card-shadow: 0 20px 60px rgba(26, 51, 28, 0.08);
+      --line: rgba(26, 51, 28, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(253, 200, 89, 0.2), transparent 25%),
+        linear-gradient(180deg, #fbf8f1 0%, var(--bg-primary) 100%);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+    }
+
+    img { display: block; max-width: 100%; }
+
+    .page-shell {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .page-shell::before,
+    .page-shell::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.65;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .page-shell::before { display: none; }
+
+    .page-shell::after {
+      top: 80px;
+      right: -20px;
+      width: 220px;
+      height: 220px;
+      background-image: url("assets/decorative/shapes/organic-blob-03.svg");
+      opacity: 0.55;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 88px 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(26, 51, 28, 0.08);
+      background: rgba(255, 255, 255, 0.56);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-brand-green);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: end;
+      margin-top: 24px;
+    }
+
+    h1, h2 {
+      margin: 0;
+      font-family: var(--font-title);
+      line-height: var(--leading-title);
+      color: var(--text-title);
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      max-width: 58ch;
+      margin: 20px 0 0;
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(26, 51, 28, 0.86);
+    }
+
+    .hero-actions,
+    .pill-row,
+    .button-row,
+    .icon-grid,
+    .font-grid,
+    .decorative-grid,
+    .component-grid,
+    .swatch-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .showcase-panel {
+      border-radius: 28px;
+      border: 1px solid rgba(26, 51, 28, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(20px);
+      padding: 28px;
+    }
+
+    .showcase-panel--dark {
+      color: var(--color-warm-cream);
+      background: linear-gradient(180deg, rgba(26, 51, 28, 0.92), rgba(15, 31, 17, 0.98));
+    }
+
+    .showcase-panel--dark .section-label,
+    .showcase-panel--dark .muted,
+    .showcase-panel--dark p,
+    .showcase-panel--dark li {
+      color: rgba(245, 241, 230, 0.82);
+    }
+
+    section {
+      padding: var(--section-gap) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+      max-width: 60ch;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      color: rgba(26, 51, 28, 0.52);
+    }
+
+    .section-head p,
+    .muted {
+      margin: 0;
+      color: rgba(26, 51, 28, 0.72);
+      line-height: 1.65;
+    }
+
+    .component-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    .lab-card {
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+      border-radius: 24px;
+      background: var(--color-white);
+      border: 1px solid rgba(26, 51, 28, 0.08);
+      min-height: 100%;
+    }
+
+    .lab-card h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-deep-green);
+    }
+
+    .button-row {
+      grid-template-columns: 1fr;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .swatch-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .swatch {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(26, 51, 28, 0.08);
+      background: var(--color-white);
+    }
+
+    .swatch-tone {
+      aspect-ratio: 1 / 1;
+    }
+
+    .swatch-meta {
+      padding: 14px 16px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .font-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .font-sample {
+      padding: 24px;
+      border-radius: 24px;
+      background: var(--color-white);
+      border: 1px solid rgba(26, 51, 28, 0.08);
+    }
+
+    .font-sample--title {
+      font-family: var(--font-title);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .font-sample--body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .icon-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .icon-tile {
+      display: grid;
+      place-items: center;
+      gap: 12px;
+      padding: 24px 16px;
+      border-radius: 24px;
+      background: var(--color-white);
+      border: 1px solid rgba(26, 51, 28, 0.08);
+      text-align: center;
+    }
+
+    .icon-tile span {
+      font-size: 13px;
+      color: rgba(26, 51, 28, 0.76);
+    }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      color: var(--color-deep-green);
+    }
+
+    .decorative-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: start;
+    }
+
+    .decorative-stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .frame-demo {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      min-height: 320px;
+      background:
+        linear-gradient(0deg, rgba(26, 51, 28, 0.2), rgba(26, 51, 28, 0.08)),
+        url("assets/photos/alojamiento-composicion-base.png") center/cover;
+    }
+
+    .frame-demo img.frame-overlay {
+      position: absolute;
+      inset: 18px;
+      width: calc(100% - 36px);
+      height: calc(100% - 36px);
+      object-fit: fill;
+      pointer-events: none;
+    }
+
+    .frame-demo .caption {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(245, 241, 230, 0.9);
+      color: var(--color-deep-green);
+    }
+
+    .wave-box {
+      overflow: hidden;
+      border-radius: 24px;
+      background: rgba(253, 200, 89, 0.18);
+      border: 1px solid rgba(26, 51, 28, 0.08);
+      padding-top: 36px;
+    }
+
+    .wave-box img {
+      width: 100%;
+      height: 64px;
+      object-fit: cover;
+    }
+
+    .recipe {
+      display: grid;
+      gap: 12px;
+      padding-left: 18px;
+      margin: 0;
+      color: rgba(26, 51, 28, 0.8);
+    }
+
+    .footer-note {
+      padding: 32px 0 72px;
+      color: rgba(26, 51, 28, 0.62);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .component-grid,
+      .font-grid,
+      .decorative-grid,
+      .swatch-grid,
+      .icon-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(var(--container), calc(100% - 24px)); }
+
+      .hero { padding-top: 56px; }
+
+      .component-grid,
+      .font-grid,
+      .decorative-grid,
+      .swatch-grid,
+      .icon-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-panel,
+      .lab-card,
+      .font-sample { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <main class="container">
+      <section class="hero" style="border-top: 0;">
+        <span class="eyebrow">UI Lab · Hacienda Solano</span>
+        <h1>Galería de recursos visuales.</h1>
+        <p class="lead">Tipografía, color, componentes, decorativos e íconos. Todo lo que existe en el sistema, en un solo lugar.</p>
+      </section>
+
+      <!-- 1. Fonts + Color -->
+      <section id="colors-fonts">
+        <div class="section-head">
+          <span class="section-label">1 · Fonts + Color</span>
+          <h2>La base que sostiene todo.</h2>
+        </div>
+
+        <div class="swatch-grid">
+          <article class="swatch"><div class="swatch-tone" style="background:#1A331C"></div><div class="swatch-meta"><strong>Deep Green</strong><br />#1A331C</div></article>
+          <article class="swatch"><div class="swatch-tone" style="background:#2D5A31"></div><div class="swatch-meta"><strong>Brand Green</strong><br />#2D5A31</div></article>
+          <article class="swatch"><div class="swatch-tone" style="background:#FDC859"></div><div class="swatch-meta"><strong>Sun Accent</strong><br />#FDC859</div></article>
+          <article class="swatch"><div class="swatch-tone" style="background:#EEBB2D"></div><div class="swatch-meta"><strong>Warm Gold</strong><br />#EEBB2D</div></article>
+          <article class="swatch"><div class="swatch-tone" style="background:#F5F1E6"></div><div class="swatch-meta"><strong>Warm Cream</strong><br />#F5F1E6</div></article>
+        </div>
+
+        <div class="font-grid" style="margin-top: 24px;">
+          <article class="font-sample">
+            <span class="section-label">Title — Fraunces</span>
+            <p class="font-sample--title">Host hospitality with calm presence.</p>
+          </article>
+          <article class="font-sample">
+            <span class="section-label">Body — Manrope</span>
+            <p class="font-sample--body">Manrope ordena el sistema, sostiene cuerpos de texto y mantiene legibilidad incluso cuando la pieza tiene foto, CTA, badges e información secundaria.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2. Components -->
+      <section id="components">
+        <div class="section-head">
+          <span class="section-label">2 · Components</span>
+          <h2>Bloques reutilizables.</h2>
+        </div>
+
+        <div class="component-grid">
+          <article class="lab-card">
+            <h3>Buttons</h3>
+            <div class="button-row">
+              <button class="hs-btn hs-btn--primary">Reservar ahora</button>
+              <button class="hs-btn hs-btn--secondary">Ver espacios</button>
+              <a class="hs-btn hs-btn--tertiary" href="#icons">Explorar íconos</a>
+            </div>
+            <p class="muted">Primary: una acción dominante. Secondary: apoyo. Tertiary: navegación sin peso.</p>
+          </article>
+
+          <article class="lab-card">
+            <h3>Pills</h3>
+            <div class="pill-row">
+              <span class="hs-pill hs-pill--active">Alojamiento</span>
+              <span class="hs-pill hs-pill--outline">Eventos</span>
+              <span class="hs-pill hs-pill--outline">Piscina</span>
+              <span class="hs-pill hs-pill--outline">Desayuno</span>
+            </div>
+            <p class="muted">Categorías, filtros y micro-estados.</p>
+          </article>
+
+          <article class="lab-card">
+            <h3>Cards</h3>
+            <div style="display:grid; gap:18px;">
+              <article class="hs-card hs-card--text">
+                <div class="hs-card__body">
+                  <h3 class="hs-card__title">Testimonio breve</h3>
+                  <p class="hs-card__text">"La luz del atardecer y el jardín hacen que todo se sienta mucho más cálido."</p>
+                  <p class="hs-card__author">— Producción editorial</p>
+                </div>
+              </article>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: 24px;">
+          <article class="hs-card hs-card--photo">
+            <div class="hs-card__image">
+              <img src="assets/photos/alojamiento-composicion-base.png" alt="Vista cálida de alojamiento en Hacienda Solano" />
+              <div class="hs-card__overlay"></div>
+            </div>
+            <div class="hs-card__body">
+              <h3 class="hs-card__title">Photo card</h3>
+              <p class="hs-card__text">Foto, overlay suave y CTA jerarquizado conviviendo sin ruido.</p>
+              <button class="hs-btn hs-btn--primary">Consultar disponibilidad</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. Decorative -->
+      <section id="decorative">
+        <div class="section-head">
+          <span class="section-label">3 · Decorative</span>
+          <h2>Formas orgánicas, palmas, separadores.</h2>
+        </div>
+
+        <!-- Shapes grid -->
+        <div style="margin-bottom:36px;">
+          <span class="section-label" style="margin-bottom:12px; display:block;">Shapes — 18 formas orgánicas · Deep Green 8%</span>
+          <div style="display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:12px;">
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-01.svg" alt="Shape 01" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">01</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-02.svg" alt="Shape 02" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">02</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-03.svg" alt="Shape 03" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">03</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-04.svg" alt="Shape 04" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">04</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-05.svg" alt="Shape 05" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">05</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-06.svg" alt="Shape 06" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">06</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-07.svg" alt="Shape 07" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">07</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/organic-blob-03.svg" alt="Organic Blob 03" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">blob-03</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-09.svg" alt="Shape 09" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">09</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-10.svg" alt="Shape 10" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">10</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-11.svg" alt="Shape 11" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">11</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-12.svg" alt="Shape 12" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">12</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-13.svg" alt="Shape 13" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">13</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-14.svg" alt="Shape 14" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">14</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-15.svg" alt="Shape 15" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">15</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-16.svg" alt="Shape 16" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">16</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-17.svg" alt="Shape 17" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">17</span>
+            </div>
+            <div style="position:relative; aspect-ratio:1; border-radius:18px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:12px;">
+              <img src="assets/decorative/shapes/shape-18.svg" alt="Shape 18" style="width:100%; height:100%; object-fit:contain; opacity:.85;" />
+              <span style="position:absolute; left:8px; bottom:6px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">18</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Palms -->
+        <div style="margin-bottom:36px;">
+          <span class="section-label" style="margin-bottom:12px; display:block;">Palms — Siluetas botánicas · Deep Green 12%</span>
+          <div style="display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px;">
+            <div style="position:relative; min-height:240px; border-radius:20px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:18px;">
+              <img src="assets/decorative/ornaments/palm-01.svg" alt="Palm 01" style="width:100%; height:100%; object-fit:contain; opacity:.92;" />
+              <span style="position:absolute; left:14px; bottom:12px; font-size:11px; font-weight:600; color:rgba(26,51,28,0.55);">palm-01 · lateral derecho</span>
+            </div>
+            <div style="position:relative; min-height:240px; border-radius:20px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center; padding:18px;">
+              <img src="assets/decorative/ornaments/palm-02.svg" alt="Palm 02" style="width:100%; height:100%; object-fit:contain; opacity:.92;" />
+              <span style="position:absolute; left:14px; bottom:12px; font-size:11px; font-weight:600; color:rgba(26,51,28,0.55);">palm-02 · lateral izquierdo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dividers -->
+        <div style="margin-bottom:36px;">
+          <span class="section-label" style="margin-bottom:12px; display:block;">Divider — Separador horizontal</span>
+          <div style="overflow:hidden; border-radius:18px; background:rgba(245,241,230,0.5); border:1px solid rgba(26,51,28,0.06);">
+            <div style="padding:12px 16px 6px; font-size:12px;" class="muted"><strong>wave-divider-01</strong></div>
+            <img src="assets/decorative/dividers/wave-divider-01.svg" alt="Wave divider" style="width:100%; height:56px; object-fit:cover; display:block;" aria-hidden="true" />
+          </div>
+        </div>
+
+        <!-- Ornaments -->
+        <div style="margin-bottom:36px;">
+          <span class="section-label" style="margin-bottom:12px; display:block;">Ornaments</span>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div style="position:relative; min-height:140px; border-radius:18px; background:rgba(245,241,230,0.5); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center;">
+              <img src="assets/decorative/ornaments/sun-accent-01.svg" alt="Sun accent" style="width:80px; height:80px; object-fit:contain; opacity:.75;" />
+              <span style="position:absolute; left:10px; bottom:8px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">sun-accent-01</span>
+            </div>
+            <div style="position:relative; min-height:140px; border-radius:18px; background:rgba(245,241,230,0.5); border:1px solid rgba(26,51,28,0.06); overflow:hidden; display:grid; place-items:center;">
+              <img src="assets/decorative/shapes/shape-06.svg" alt="Shape 06 sample" style="width:90%; height:90%; object-fit:contain; opacity:.6;" />
+              <span style="position:absolute; left:10px; bottom:8px; font-size:10px; font-weight:600; color:rgba(26,51,28,0.55);">shape-06</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Icons -->
+      <section id="icons">
+        <div class="section-head">
+          <span class="section-label">4 · Icons</span>
+          <h2>Íconos del sistema.</h2>
+          <p>Lucide outline, 24×24, stroke-width 2. Usar con <code>currentColor</code> para heredar del contexto.</p>
+        </div>
+
+        <h3 style="margin:28px 0 16px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(26,51,28,0.52);">Amenidades</h3>
+        <div class="icon-grid">
+          <article class="icon-tile"><img src="assets/icons/bed.svg" class="icon" alt="" /><span>Cama</span></article>
+          <article class="icon-tile"><img src="assets/icons/tent.svg" class="icon" alt="" /><span>Glamping</span></article>
+          <article class="icon-tile"><img src="assets/icons/pool.svg" class="icon" alt="" /><span>Piscina</span></article>
+          <article class="icon-tile"><img src="assets/icons/wifi.svg" class="icon" alt="" /><span>WiFi</span></article>
+          <article class="icon-tile"><img src="assets/icons/hot-water.svg" class="icon" alt="" /><span>Agua Caliente</span></article>
+          <article class="icon-tile"><img src="assets/icons/bathroom.svg" class="icon" alt="" /><span>Baño Privado</span></article>
+          <article class="icon-tile"><img src="assets/icons/parking.svg" class="icon" alt="" /><span>Estacionamiento</span></article>
+          <article class="icon-tile"><img src="assets/icons/security.svg" class="icon" alt="" /><span>Seguridad 24h</span></article>
+          <article class="icon-tile"><img src="assets/icons/smart-tv.svg" class="icon" alt="" /><span>Smart TV</span></article>
+          <article class="icon-tile"><img src="assets/icons/breakfast.svg" class="icon" alt="" /><span>Desayuno</span></article>
+          <article class="icon-tile"><img src="assets/icons/confort.svg" class="icon" alt="" /><span>Confort</span></article>
+          <article class="icon-tile"><img src="assets/icons/nature.svg" class="icon" alt="" /><span>Naturaleza</span></article>
+          <article class="icon-tile"><img src="assets/icons/clock.svg" class="icon" alt="" /><span>Horario</span></article>
+          <article class="icon-tile"><img src="assets/icons/calendar.svg" class="icon" alt="" /><span>Reserva</span></article>
+          <article class="icon-tile"><img src="assets/icons/check-in.svg" class="icon" alt="" /><span>Check-in</span></article>
+          <article class="icon-tile"><img src="assets/icons/map-pin.svg" class="icon" alt="" /><span>Ubicación</span></article>
+          <article class="icon-tile"><img src="assets/icons/event.svg" class="icon" alt="" /><span>Eventos</span></article>
+          <article class="icon-tile"><img src="assets/icons/sunbed.svg" class="icon" alt="" /><span>Relax</span></article>
+          <article class="icon-tile"><img src="assets/icons/night.svg" class="icon" alt="" /><span>Noche</span></article>
+          <article class="icon-tile"><img src="assets/icons/message.svg" class="icon" alt="" /><span>Contacto</span></article>
+        </div>
+
+        <h3 style="margin:28px 0 16px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(26,51,28,0.52);">Entretenimiento</h3>
+        <div class="icon-grid">
+          <article class="icon-tile"><img src="assets/icons/netflix.svg" class="icon" alt="" /><span>Netflix</span></article>
+          <article class="icon-tile"><img src="assets/icons/youtube.svg" class="icon" alt="" /><span>YouTube Premium</span></article>
+          <article class="icon-tile"><img src="assets/icons/smart-tv.svg" class="icon" alt="" /><span>Smart TV</span></article>
+        </div>
+
+        <h3 style="margin:28px 0 16px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(26,51,28,0.52);">Medios de Pago</h3>
+        <div class="icon-grid">
+          <article class="icon-tile"><img src="assets/icons/credit-card.svg" class="icon" alt="" /><span>Tarjeta</span></article>
+          <article class="icon-tile"><img src="assets/icons/cash.svg" class="icon" alt="" /><span>Efectivo</span></article>
+        </div>
+
+        <h3 style="margin:28px 0 16px; font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(26,51,28,0.52);">Redes Sociales</h3>
+        <div class="icon-grid">
+          <article class="icon-tile"><img src="assets/icons/facebook.svg" class="icon" alt="" /><span>Facebook</span></article>
+          <article class="icon-tile"><img src="assets/icons/whatsapp.svg" class="icon" alt="" /><span>WhatsApp</span></article>
+          <article class="icon-tile"><img src="assets/icons/instagram.svg" class="icon" alt="" /><span>Instagram</span></article>
+          <article class="icon-tile"><img src="assets/icons/message.svg" class="icon" alt="" /><span>Mensaje</span></article>
+        </div>
+      </section>
+
+      <!-- 5. Logo -->
+      <section id="logo">
+        <div class="section-head">
+          <span class="section-label">5 · Logo</span>
+          <h2>Identidad principal.</h2>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+          <div style="padding:32px 28px 24px; border-radius:20px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); text-align:center;">
+            <img src="assets/logo/primary/Isotipo.svg" alt="Isotipo Hacienda Solano" style="width:120px; height:120px; object-fit:contain; margin:0 auto 14px;" />
+            <span class="muted" style="font-size:12px; font-weight:600;">Isotipo</span>
+          </div>
+          <div style="padding:32px 28px 24px; border-radius:20px; background:rgba(245,241,230,0.6); border:1px solid rgba(26,51,28,0.06); text-align:center;">
+            <img src="assets/logo/primary/Logotipo.svg" alt="Logotipo Hacienda Solano" style="width:240px; height:80px; object-fit:contain; margin:0 auto 14px;" />
+            <span class="muted" style="font-size:12px; font-weight:600;">Logotipo</span>
+          </div>
+        </div>
+      </section>
+
+      <p class="footer-note">UI Lab · Hacienda Solano — galería de recursos del sistema visual.</p>
+    </main>
+  </div>
+</body>
+</html>

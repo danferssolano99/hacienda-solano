@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" data-color-scheme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacienda Solano — Card · Organic</title>
+
+  <!--
+    Subfamilia orgánica boho chic.
+    Extiende la card base con geometría asimétrica
+    y aire más cálido. Convive con photo, glass y text.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Manrope:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../brand/brand-tokens.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <link rel="stylesheet" href="card.css" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-primary);
+      font-family: var(--font-body);
+      padding: 40px 20px;
+    }
+
+    .demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .demo-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(26, 51, 28, 0.35);
+    }
+
+    .card-wrapper { display: inline-block; }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <span class="demo-label">Card · Organic &mdash; Subfamilia boho chic</span>
+
+    <div class="card-wrapper">
+      <article class="hs-card hs-card--organic">
+        <div class="hs-card__body">
+          <h3 class="hs-card__title">Experiencia Palm</h3>
+          <p class="hs-card__text">
+            Despertar entre palmeras, con el sonido de la naturaleza
+            y el aroma del campo colombiano.
+          </p>
+          <button class="hs-btn hs-btn--primary">Descubrir</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

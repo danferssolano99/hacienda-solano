@@ -1,0 +1,40 @@
+# Hacienda Solano — Graphic Designer Workspace
+# Gitignore for generated previews and exports
+
+# Generated exports (PNG/JPEG from screenshots)
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# PDF exports
+*.pdf
+
+# OS files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# OpenCode / SDD artifacts
+.atl/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fonts (use Google Fonts CDN by default; local copies are optional)
+assets/fonts/
+
+# Client photos (unversioned by default — uncomment to track)
+# assets/photos/
+
+# Keep folder structure
+!assets/logo/
+!assets/logo/*.svg
+
+# Node (if ever added)
+node_modules/
+package-lock.json
+yarn.lock

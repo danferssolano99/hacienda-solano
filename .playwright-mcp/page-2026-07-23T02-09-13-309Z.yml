@@ -1,0 +1,18 @@
+- main "Banner de alojamiento domo Hacienda Solano" [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - img "Hacienda Solano" [ref=e6]
+      - generic [ref=e7]:
+        - paragraph [ref=e8]: Alojamiento Hacienda Solano
+        - paragraph [ref=e9]: Experiencia domo en un entorno de calma natural
+    - generic [ref=e10]:
+      - paragraph [ref=e11]: Escapada serena
+      - heading "Escapate a un domo de descanso." [level=1] [ref=e12]
+      - paragraph [ref=e13]: Una experiencia de alojamiento pensada para bajar el ritmo, respirar naturaleza y reconectar con lo esencial en Hacienda Solano.
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: Nuevo refugio de alojamiento
+        - paragraph [ref=e17]: Consultá disponibilidad y conocé una estadía íntima, cálida y distinta dentro de la hacienda.
+      - link "Reservar alojamiento domo por WhatsApp" [ref=e19] [cursor=pointer]:
+        - /url: https://wa.me/51905433158
+        - text: Reservar por WhatsApp

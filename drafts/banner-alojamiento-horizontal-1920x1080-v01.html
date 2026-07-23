@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es" data-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1" />
+    <title>Hacienda Solano - Banner horizontal alojamiento v01</title>
+    <link rel="stylesheet" href="../brand/brand-tokens.css" />
+    <link rel="stylesheet" href="../assets/export.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #17301a;
+        font-family: var(--font-body);
+      }
+
+      .banner {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 18% 18%, rgba(253, 200, 89, 0.18), transparent 24%),
+          linear-gradient(135deg, #17301a 0%, #25442a 45%, #304f35 100%);
+        color: var(--color-warm-cream);
+        box-shadow: 0 32px 90px rgba(8, 16, 9, 0.34);
+      }
+
+      .banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(23, 48, 26, 0.96) 0%, rgba(23, 48, 26, 0.92) 32%, rgba(23, 48, 26, 0.68) 52%, rgba(23, 48, 26, 0.18) 72%, rgba(23, 48, 26, 0) 100%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+        z-index: 1;
+      }
+
+      .photo-wrap {
+        position: absolute;
+        inset: 90px 90px 90px 980px;
+        border-radius: 38px;
+        overflow: hidden;
+        box-shadow: 0 26px 80px rgba(8, 16, 9, 0.26);
+      }
+
+      .photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transform: scale(1.03);
+        filter: saturate(0.88) contrast(1.02) brightness(0.94);
+      }
+
+      .photo-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(26, 51, 28, 0.06) 0%, rgba(26, 51, 28, 0.22) 100%),
+          linear-gradient(90deg, rgba(26, 51, 28, 0) 46%, rgba(26, 51, 28, 0.24) 100%);
+      }
+
+      .shape {
+        position: absolute;
+        z-index: 1;
+        opacity: 0.12;
+        filter: brightness(1.2);
+      }
+
+      .shape--top {
+        top: -60px;
+        right: 720px;
+        width: 360px;
+      }
+
+      .shape--bottom {
+        right: 820px;
+        bottom: -120px;
+        width: 420px;
+        opacity: 0.1;
+      }
+
+      .ornament {
+        position: absolute;
+        z-index: 2;
+        right: 120px;
+        bottom: 78px;
+        width: 132px;
+        opacity: 0.52;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 930px;
+        height: 100%;
+        padding: 82px 0 78px 92px;
+      }
+
+      .topline {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .logo {
+        width: 238px;
+        height: auto;
+        filter: brightness(0) invert(0.96);
+      }
+
+      .collection {
+        padding-left: 20px;
+        border-left: 1px solid rgba(245, 241, 230, 0.22);
+        color: rgba(245, 241, 230, 0.78);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        max-width: 760px;
+        margin-top: 26px;
+      }
+
+      .eyebrow {
+        color: var(--color-sun-accent);
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin-top: 28px;
+        font-family: var(--font-title);
+        font-size: 110px;
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+      }
+
+      .supporting {
+        max-width: 570px;
+        margin-top: 26px;
+        color: rgba(245, 241, 230, 0.84);
+        font-size: 31px;
+        line-height: 1.42;
+        font-weight: 500;
+      }
+
+      .footer {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 40px;
+        width: 790px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(245, 241, 230, 0.16);
+      }
+
+      .note {
+        color: rgba(245, 241, 230, 0.72);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+        padding: 22px 34px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--color-sun-accent), var(--color-warm-gold));
+        color: var(--color-deep-green);
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        box-shadow: 0 16px 36px rgba(238, 187, 45, 0.22);
+      }
+
+      .cta::after {
+        content: "↗";
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .guide {
+        position: absolute;
+        z-index: 5;
+        top: 18px;
+        right: 18px;
+        padding: 8px 11px;
+        border-radius: 8px;
+        background: rgba(26, 51, 28, 0.82);
+        color: #fff;
+        font-size: 12px;
+      }
+    </style>
+    <script src="../assets/export.js" defer></script>
+  </head>
+  <body>
+    <main class="banner" data-export-canvas data-export-width="1920" data-export-height="1080">
+      <img class="shape shape--top" src="../assets/decorative/shapes/shape-05.svg" alt="" aria-hidden="true" />
+      <img class="shape shape--bottom" src="../assets/decorative/shapes/shape-09.svg" alt="" aria-hidden="true" />
+
+      <div class="photo-wrap">
+        <img class="photo" src="../assets/photos/alojamiento-composicion-base.png" alt="Vista del alojamiento de Hacienda Solano" />
+      </div>
+
+      <img class="ornament" src="../assets/decorative/ornaments/palm-01.svg" alt="" aria-hidden="true" />
+
+      <section class="content">
+        <div>
+          <div class="topline">
+            <img class="logo" src="../assets/logo/primary/Logotipo.svg" alt="Hacienda Solano" />
+            <p class="collection">Alojamiento</p>
+          </div>
+
+          <div class="hero">
+            <p class="eyebrow">Tu pausa empieza acá</p>
+            <h1>Escapate a un refugio entre viñas y calma.</h1>
+            <p class="supporting">Habitaciones, bungalows y glamping para bajar el ritmo y volver a disfrutar del tiempo.</p>
+          </div>
+        </div>
+
+        <div class="footer">
+          <p class="note">Reservá directo con nosotros</p>
+          <p class="cta">Consultá disponibilidad</p>
+        </div>
+      </section>
+
+      <div class="guide" data-export-ui>Banner horizontal 1920 x 1080 · v01</div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+- main [ref=e2]:
+  - img "Espacio de alojamiento de Hacienda Solano" [ref=e3]
+  - generic [ref=e4]: Hacienda Solano
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - paragraph [ref=e9]: Tu próxima escapada
+      - heading "Descansá distinto" [level=1] [ref=e10]: Descansádistinto
+      - paragraph [ref=e11]: Un lugar para desconectar, respirar y disfrutar cada momento.
+      - generic [ref=e12]:
+        - generic [ref=e13]: Bungalows
+        - generic [ref=e14]: Habitaciones
+        - generic [ref=e15]: Glamping
+    - generic [ref=e16]:
+      - generic [ref=e17]: Alojamiento
+      - generic [ref=e18]: Reservá tu estadía
+      - generic [ref=e19]: ↗
+  - generic [ref=e20]: Post 1080 x 1350 · Instagram

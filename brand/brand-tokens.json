@@ -1,0 +1,76 @@
+{
+  "$schema": "https://hacienda-solano.pe/tokens.schema.json",
+  "name": "Hacienda Solano Design Tokens",
+  "version": "1.0",
+  "colors": {
+    "deep-green": {
+      "value": "#1A331C",
+      "description": "Primary text on light backgrounds; primary background in dark mode.",
+      "roles": ["text-primary-light", "bg-primary-dark"]
+    },
+    "brand-green": {
+      "value": "#2D5A31",
+      "description": "Accents, buttons, dividers, overlays.",
+      "roles": ["accent", "interactive", "divider"]
+    },
+    "sun-accent": {
+      "value": "#FDC859",
+      "description": "Highlights, badges, prices, icons. Use sparingly (≤10% of canvas).",
+      "roles": ["highlight", "badge", "icon"]
+    },
+    "warm-gold": {
+      "value": "#EEBB2D",
+      "description": "Dark-mode titles, premium details, borders.",
+      "roles": ["title-dark", "premium-detail", "border"]
+    },
+    "warm-cream": {
+      "value": "#F5F1E6",
+      "description": "Primary background in light mode.",
+      "roles": ["bg-primary-light"]
+    },
+    "white": {
+      "value": "#FFFFFF",
+      "description": "Card surfaces, text on dark backgrounds.",
+      "roles": ["surface-light", "text-on-dark"]
+    }
+  },
+  "typography": {
+    "title": {
+      "family": "Fraunces",
+      "fallback": "Georgia, serif",
+      "weights": [400, 700],
+      "line-height": 1.1
+    },
+    "body": {
+      "family": "Manrope",
+      "fallback": "system-ui, sans-serif",
+      "weights": [400, 600],
+      "line-height": 1.5
+    }
+  },
+  "modes": {
+    "light": {
+      "background": "{colors.warm-cream.value}",
+      "surface": "{colors.white.value}",
+      "text-primary": "{colors.deep-green.value}",
+      "text-title": "{colors.deep-green.value}",
+      "text-accent": "{colors.brand-green.value}",
+      "highlight": "{colors.sun-accent.value}",
+      "border": "{colors.warm-gold.value}"
+    },
+    "dark": {
+      "background": "{colors.deep-green.value}",
+      "surface": "#0F1F11",
+      "text-primary": "{colors.warm-cream.value}",
+      "text-title": "{colors.warm-cream.value}",
+      "text-accent": "{colors.sun-accent.value}",
+      "highlight": "{colors.warm-gold.value}",
+      "border": "{colors.brand-green.value}"
+    }
+  },
+  "spacing": {
+    "margin-min": "5%",
+    "padding-card": "min(32px, 3%)",
+    "section-gap": "min(48px, 5%)"
+  }
+}

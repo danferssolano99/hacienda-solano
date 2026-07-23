@@ -1,0 +1,371 @@
+- generic [active] [ref=e1]:
+  - button "Abrir menú" [ref=e3]
+  - main [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e12]:
+          - img "Hacienda Solano"
+        - heading "ELIGE TU EXPERIENCIA" [level=2] [ref=e14]: ELIGE TUEXPERIENCIA
+      - generic [ref=e15]:
+        - heading "Alojamiento" [level=3] [ref=e23] [cursor=pointer]
+        - heading "Eventos" [level=3] [ref=e35] [cursor=pointer]
+        - heading "Piscina" [level=3] [ref=e45] [cursor=pointer]
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]: Descansa con nosotros
+        - heading "ALOJAMIENTO" [level=2] [ref=e53]
+        - paragraph [ref=e54]: Escapa del ruido urbano. Elige entre nuestros bungalows privados o la experiencia única de glamping bajo las estrellas — cada estadía es una desconexión total.
+      - generic [ref=e56]:
+        - button "🏡 Bungalows" [ref=e57]
+        - button "⛺ Glamping" [ref=e58]
+      - generic [ref=e60]:
+        - generic [ref=e62]:
+          - generic [ref=e67]:
+            - heading "Plan Descanso" [level=3] [ref=e68]
+            - text: Desconexión total
+          - generic [ref=e70]:
+            - paragraph [ref=e71]: Para quienes buscan desconexión total y solo descansar, sin tecnología. El refugio más puro de la naturaleza.
+            - generic [ref=e73]:
+              - generic [ref=e74]: S/ 60
+              - generic [ref=e75]: por noche
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - generic [ref=e83]: Cochera privada
+              - listitem [ref=e84]:
+                - generic [ref=e89]: Salida temprana 10 AM
+              - listitem [ref=e90]:
+                - generic [ref=e94]: Cama matrimonial 2 plazas
+              - listitem [ref=e95]:
+                - generic [ref=e100]: Baño privado + agua caliente
+              - listitem [ref=e101]:
+                - generic [ref=e107]: WiFi gratuito
+            - generic [ref=e108]:
+              - link "Reservar por WhatsApp" [ref=e109] [cursor=pointer]:
+                - /url: https://wa.me/51905433158?text=Hola%20buen%20d%C3%ADa%20deseo%20reservar%20el%20Plan%20Descanso%20para%20......(n%C3%BAmero%20de%20personas)%20el%20d%C3%ADa......
+              - generic [ref=e112]: Respuesta en menos de 5 min
+        - generic [ref=e117]:
+          - generic [ref=e123]:
+            - heading "Plan Confort" [level=3] [ref=e124]
+            - text: Descanso + entretenimiento
+          - generic [ref=e126]:
+            - paragraph [ref=e127]: Perfecto para quienes prefieren descanso y entretenimiento interior. Disfruta Netflix y YouTube Premium sin salir.
+            - generic [ref=e129]:
+              - generic [ref=e130]: S/ 70
+              - generic [ref=e131]: por noche
+            - list [ref=e132]:
+              - listitem [ref=e133]:
+                - generic [ref=e138]: Smart TV – Netflix + YouTube Premium
+              - listitem [ref=e139]:
+                - generic [ref=e145]: Cochera privada
+              - listitem [ref=e146]:
+                - generic [ref=e150]: Cama matrimonial 2 plazas
+              - listitem [ref=e151]:
+                - generic [ref=e156]: Baño privado + agua caliente
+              - listitem [ref=e157]:
+                - generic [ref=e163]: WiFi gratuito
+            - generic [ref=e164]:
+              - link "Reservar por WhatsApp" [ref=e165] [cursor=pointer]:
+                - /url: https://wa.me/51905433158?text=Hola%20buen%20d%C3%ADa%20deseo%20reservar%20el%20Plan%20Confort%20para%20......(n%C3%BAmero%20de%20personas)%20el%20d%C3%ADa......
+              - generic [ref=e168]: Respuesta en menos de 5 min
+        - generic [ref=e173]:
+          - generic [ref=e180]:
+            - heading "Plan Experiencia" [level=3] [ref=e181]
+            - text: Día completo de relax
+          - generic [ref=e183]:
+            - paragraph [ref=e184]: Ideal para quienes buscan diversión al aire libre, piscina y descanso. Un día completo de relax con todo incluido.
+            - generic [ref=e186]:
+              - generic [ref=e187]: S/ 90
+              - generic [ref=e188]: por noche
+            - list [ref=e189]:
+              - listitem [ref=e190]:
+                - generic [ref=e195]: Smart TV – Netflix + YouTube Premium
+              - listitem [ref=e196]:
+                - generic [ref=e202]: Acceso a la piscina
+              - listitem [ref=e203]:
+                - generic [ref=e207]: Desayuno incluido
+              - listitem [ref=e208]:
+                - generic [ref=e214]: Cochera privada
+              - listitem [ref=e215]:
+                - generic [ref=e219]: Cama matrimonial 2 plazas
+            - generic [ref=e220]:
+              - link "Reservar por WhatsApp" [ref=e221] [cursor=pointer]:
+                - /url: https://wa.me/51905433158?text=Hola%20buen%20d%C3%ADa%20deseo%20reservar%20el%20Plan%20Experiencia%20para%20......(n%C3%BAmero%20de%20personas)%20el%20d%C3%ADa......
+              - generic [ref=e224]: Respuesta en menos de 5 min
+      - generic [ref=e228]:
+        - heading "Incluido en todos los planes" [level=3] [ref=e229]
+        - paragraph [ref=e230]: Sin importar el plan que elijas, esto siempre está garantizado.
+        - generic [ref=e231]:
+          - generic [ref=e233]:
+            - generic [ref=e237]: Cama Matrimonial
+            - generic [ref=e238]: 2 plazas, ropa de cama incluida
+          - generic [ref=e240]:
+            - generic [ref=e245]: Agua Caliente
+            - generic [ref=e246]: Disponible las 24h
+          - generic [ref=e248]:
+            - generic [ref=e254]: WiFi Gratuito
+            - generic [ref=e255]: Señal en todo el recinto
+          - generic [ref=e257]:
+            - generic [ref=e262]: Baño Privado
+            - generic [ref=e263]: Exclusivo para el huésped
+          - generic [ref=e265]:
+            - generic [ref=e271]: Cochera Privada
+            - generic [ref=e272]: Estacionamiento exclusivo
+          - generic [ref=e274]:
+            - generic [ref=e278]: Seguridad 24h
+            - generic [ref=e279]: Vigilancia permanente
+      - generic [ref=e281]:
+        - generic [ref=e282]:
+          - generic [ref=e283]: Horario de Atención
+          - heading "Siempre listos para ti" [level=3] [ref=e288]
+          - paragraph [ref=e289]: Nuestro equipo está disponible todos los días para asegurar que tu estadía sea perfecta, desde la mañana hasta la noche.
+        - generic [ref=e290]:
+          - generic [ref=e291]: Lunes a Domingo
+          - generic [ref=e292]:
+            - generic [ref=e293]: 8:00
+            - generic [ref=e294]: am
+          - generic [ref=e296]:
+            - generic [ref=e297]: 11:00
+            - generic [ref=e298]: pm
+    - generic [ref=e300]:
+      - generic [ref=e301]:
+        - generic [ref=e302]: Experiencias Inolvidables
+        - heading "EVENTOS" [level=2] [ref=e303]
+        - paragraph [ref=e304]:
+          - text: Dos caminos hacia una celebración inolvidable. Asegura el escenario perfecto con los esenciales de nuestro servicio
+          - strong [ref=e305]: Tierra
+          - text: ", o eleva tu evento al máximo nivel con"
+          - strong [ref=e306]: Fuego
+          - text: ", nuestra experiencia integral donde nos encargamos de absolutamente todo."
+      - generic [ref=e307]:
+        - heading "Servicios" [level=3] [ref=e310]
+        - generic [ref=e313]:
+          - generic [ref=e314]:
+            - generic [ref=e319]:
+              - generic [ref=e320]: Local + esenciales
+              - heading "Tierra" [level=3] [ref=e321]
+            - generic [ref=e322]:
+              - generic [ref=e323]: Precio desde
+              - generic [ref=e324]:
+                - generic [ref=e325]: S/ 1,600
+                - generic [ref=e326]: por evento
+          - generic [ref=e329]:
+            - button [ref=e331]:
+              - heading "7 Horas de Celebración 🎉" [level=4] [ref=e337]
+            - button [ref=e342]:
+              - heading "Mobiliario y Mantelería 🛋️" [level=4] [ref=e348]
+            - button [ref=e353]:
+              - heading "Iluminación Atmosférica 💡" [level=4] [ref=e358]
+            - button [ref=e363]:
+              - heading "Habitación de Cortesía 🏠" [level=4] [ref=e369]
+            - button [ref=e374]:
+              - heading "Coordinador de Operaciones 📋" [level=4] [ref=e380]
+            - button [ref=e385]:
+              - heading "Recepción 🤝" [level=4] [ref=e393]
+            - button [ref=e398]:
+              - heading "Higiene Permanente 🧼" [level=4] [ref=e404]
+            - button [ref=e409]:
+              - heading "Cascada Artificial ⛲" [level=4] [ref=e416]
+      - generic [ref=e420]:
+        - heading "Complementos de la Hacienda" [level=3] [ref=e423]
+        - paragraph [ref=e426]: Toca cada tarjeta para ver más detalles
+        - generic [ref=e428]:
+          - heading "Salón Open Concept 250 m²" [level=4] [ref=e440] [cursor=pointer]
+          - heading "Piscina Estilo Playa" [level=4] [ref=e453] [cursor=pointer]
+          - heading "Hotel Interior" [level=4] [ref=e465] [cursor=pointer]
+          - heading "Bebidas en Local" [level=4] [ref=e478] [cursor=pointer]
+          - heading "Respaldo Eléctrico" [level=4] [ref=e489] [cursor=pointer]
+          - heading "Parking Privado" [level=4] [ref=e502] [cursor=pointer]
+          - heading "Ubicación Estratégica" [level=4] [ref=e514] [cursor=pointer]
+          - heading "Seguridad 24h" [level=4] [ref=e525] [cursor=pointer]
+    - generic [ref=e529]:
+      - generic [ref=e530]:
+        - generic [ref=e531]: Nuestro Oasis
+        - heading "PISCINA" [level=2] [ref=e532]
+        - paragraph [ref=e533]: Diversión acuática para toda la familia. Agua cristalina con control constante de calidad, ambiente seguro y todo lo que necesitas para un día perfecto.
+      - generic [ref=e534]:
+        - generic [ref=e536]:
+          - generic [ref=e537]: 🧪
+          - heading "Máxima Higiene Garantizada" [level=3] [ref=e543]
+          - paragraph [ref=e544]: Tu salud es nuestra prioridad. Realizamos un control estricto y constante de cloro y pH para asegurar que nades en aguas 100% seguras y cristalinas.
+        - generic [ref=e546]:
+          - generic [ref=e547]: 🦢
+          - heading "Conexión Real con la Naturaleza" [level=3] [ref=e553]
+          - paragraph [ref=e554]: No es solo una piscina, es un refugio. Disfruta de un entorno vivo donde podrás convivir con nuestra fauna local en un ambiente de respeto y tranquilidad.
+      - generic [ref=e555]:
+        - heading "Nuestras Tarifas" [level=3] [ref=e556]
+        - paragraph [ref=e557]: Sin reserva previa · Solo ven y disfruta
+        - generic [ref=e558]:
+          - generic [ref=e560]:
+            - generic [ref=e567]: S/ 10
+            - generic [ref=e568]: Entrada General
+            - generic [ref=e569]: Acceso total a áreas verdes y piscina principal
+          - generic [ref=e571]:
+            - generic [ref=e576]: S/ 5
+            - generic [ref=e577]: Niños (< 6 años)
+            - generic [ref=e578]: Tarifa especial para los aventureros del hogar
+      - generic [ref=e579]:
+        - generic [ref=e580]:
+          - heading "Especificaciones" [level=3] [ref=e581]
+          - generic [ref=e582]:
+            - generic [ref=e583]:
+              - generic [ref=e590]:
+                - generic [ref=e591]: Piscina Adultos
+                - generic [ref=e592]: Estilo Playa
+              - generic [ref=e593]: Acceso con pendiente suave
+            - generic [ref=e594]:
+              - generic [ref=e603]:
+                - generic [ref=e604]: Profundidad General
+                - generic [ref=e605]: 40cm → 1.50m
+              - generic [ref=e606]: Progresiva
+        - generic [ref=e608]:
+          - generic [ref=e609]:
+            - heading "🌟 Comodidad Total" [level=4] [ref=e610]
+            - generic [ref=e611]:
+              - generic [ref=e612]: Estacionamiento privado gratuito
+              - generic [ref=e619]: Zona de snacks y bebidas heladas
+              - generic [ref=e624]: Alquiler de flotadores para todas las edades
+          - button [ref=e635]:
+            - heading "📋 Normas de Convivencia" [level=4] [ref=e636]
+      - generic [ref=e640]:
+        - generic [ref=e641]:
+          - generic [ref=e642]: Horario de Atención
+          - heading "Planifica tu visita" [level=3] [ref=e647]
+          - paragraph [ref=e648]: Conoce nuestros horarios de apertura para que no te pierdas ni un minuto de diversión en el agua.
+        - generic [ref=e649]:
+          - generic [ref=e650]:
+            - generic [ref=e651]: Lunes a Jueves
+            - generic [ref=e652]: Cerrado
+            - generic [ref=e653]: Mantenimiento
+          - generic [ref=e654]:
+            - generic [ref=e662]: Viernes a Domingo
+            - generic [ref=e663]:
+              - text: "12"
+              - generic [ref=e664]: pm
+            - generic [ref=e666]:
+              - text: "7"
+              - generic [ref=e667]: pm
+            - generic [ref=e668]: ¡Fin de Semana!
+          - generic [ref=e669]:
+            - heading "¡Te esperamos!" [level=4] [ref=e674]
+            - paragraph [ref=e675]: El clima perfecto para disfrutar de un día inolvidable.
+      - generic [ref=e677]:
+        - heading "¡No necesitas reserva!" [level=3] [ref=e678]
+        - paragraph [ref=e679]: Trae tu ropa de baño, nosotros ponemos el resto. Ven hoy mismo y disfruta de un día refrescante con la familia.
+        - link "Cómo llegar" [ref=e680] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/gEQmpJXKoajLmrsAA
+    - generic [ref=e687]:
+      - generic [ref=e688]:
+        - generic [ref=e689]: Galería
+        - heading "MOMENTOS ÚNICOS" [level=2] [ref=e690]: MOMENTOSÚNICOS
+      - generic [ref=e692]:
+        - heading "Seleccionando las mejores tomas" [level=3] [ref=e701]
+        - paragraph [ref=e702]: Estamos preparando una galería increíble para ti, disponible muy pronto. Mientras tanto, puedes explorar nuestra colección de fotos y videos de todos nuestros servicios en Instagram.
+        - link "Ver galería completa en Instagram" [ref=e703] [cursor=pointer]:
+          - /url: https://www.instagram.com/haciendasolano/
+    - generic [ref=e709]:
+      - generic [ref=e710]:
+        - generic [ref=e711]: Ubicación
+        - heading "¿CÓMO LLEGAR?" [level=2] [ref=e712]
+        - paragraph [ref=e713]: Nos ubicamos en Panamericana Norte frente al paradero Licapa en el distrito de Paiján, provincia de Ascope, región La Libertad. Te explicamos cómo llegar desde diferentes puntos.
+      - generic [ref=e714]:
+        - generic [ref=e715]:
+          - generic [ref=e716]:
+            - heading "Puntos de Acceso" [level=3] [ref=e717]
+            - paragraph [ref=e718]: Un único paraíso natural con accesos dedicados para tu mayor comodidad.
+            - generic [ref=e719]:
+              - link [ref=e720] [cursor=pointer]:
+                - /url: https://maps.app.goo.gl/cMQMNtRqu6f4RZiw9
+                - generic [ref=e725]:
+                  - 'heading "Ingreso: Alojamiento" [level=4] [ref=e726]'
+                  - paragraph [ref=e727]: Directo a recepción
+              - link [ref=e728] [cursor=pointer]:
+                - /url: https://maps.app.goo.gl/gEQmpJXKoajLmrsAA
+                - generic [ref=e733]:
+                  - 'heading "Ingreso: Eventos y Piscina" [level=4] [ref=e734]'
+                  - paragraph [ref=e735]: Directo al área recreativa
+          - generic [ref=e736]:
+            - heading "Puntos de visita cercanos" [level=3] [ref=e737]
+            - generic [ref=e738]:
+              - generic [ref=e742]:
+                - paragraph [ref=e743]: Plaza de armas de Paiján
+                - paragraph [ref=e744]: El corazón de nuestro distrito. A 5 minutos en transporte local.
+              - generic [ref=e750]:
+                - paragraph [ref=e751]: Playa Puerto Malabrigo
+                - paragraph [ref=e752]: Vibrante playa con la “ola izquierda mas larga del mundo”. A 20 min.
+              - generic [ref=e760]:
+                - paragraph [ref=e761]: Playa El Milagro
+                - paragraph [ref=e762]: Una playa nueva y tranquila. A 20 minutos en transporte personal.
+        - generic [ref=e765]:
+          - generic [ref=e767]:
+            - button "Desde Paiján" [ref=e768]
+            - button "Desde Trujillo" [ref=e772]
+            - button "Pto. Malabrigo" [ref=e776]
+            - button "Desde Chocope" [ref=e780]
+            - button "Desde Lima" [ref=e784]
+          - generic [ref=e793]:
+            - heading "Desde Paiján" [level=3] [ref=e795]
+            - generic [ref=e796]:
+              - generic [ref=e803]:
+                - heading "Transporte público" [level=4] [ref=e804]
+                - paragraph [ref=e805]: Toma un taxi desde el paradero mas cercano o páralo en tu ubicación, luego pídele que te lleve a la Hacienda Solano, frente al paradero de Licapa.
+                - generic [ref=e806]:
+                  - generic [ref=e807]: 5 min
+                  - generic [ref=e811]: S/ 2 - S/ 3
+              - generic [ref=e823]:
+                - heading "Automóvil" [level=4] [ref=e824]
+                - paragraph [ref=e825]: Toma la ruta panamericana con dirección a Trujillo, nos encontramos frente al Paradero Licapa. Recomendamos usar Google Maps.
+                - generic [ref=e826]: 5 min
+              - generic [ref=e835]:
+                - heading "Bicicleta" [level=4] [ref=e836]
+                - paragraph [ref=e837]: ¡Si vienes en bicicleta te regalamos tu bebida gratis!
+                - generic [ref=e838]: Variable
+  - contentinfo [ref=e843]:
+    - generic [ref=e846]:
+      - generic [ref=e847]:
+        - generic [ref=e848]:
+          - generic [ref=e849]:
+            - generic [ref=e850]: HS
+            - generic [ref=e852]: Hacienda Solano
+          - paragraph [ref=e853]: Tu destino ideal para eventos inolvidables, alojamiento rural y diversión bajo el sol. Creando momentos únicos desde hace más de 10 años.
+          - generic [ref=e854]:
+            - link "905 433 158" [ref=e855] [cursor=pointer]:
+              - /url: tel:905433158
+            - generic [ref=e858]: "|"
+            - link "Panamericana Norte, Paiján" [ref=e859] [cursor=pointer]:
+              - /url: "#contacto"
+          - generic [ref=e863]:
+            - link "Escríbenos por WhatsApp" [ref=e864] [cursor=pointer]:
+              - /url: https://wa.me/51905433158?text=Hola%2C%20quisiera%20información%20sobre%20Hacienda%20Solano
+            - generic [ref=e867]:
+              - link "Instagram" [ref=e868] [cursor=pointer]:
+                - /url: https://www.instagram.com/haciendasolano/
+              - link "Facebook" [ref=e872] [cursor=pointer]:
+                - /url: http://facebook.com/haciendasolanoperu
+        - generic [ref=e875]:
+          - heading "Servicios" [level=4] [ref=e876]
+          - list [ref=e877]:
+            - listitem [ref=e878]:
+              - link "Alojamiento" [ref=e879] [cursor=pointer]:
+                - /url: "#alojamiento"
+            - listitem [ref=e882]:
+              - link "Eventos" [ref=e883] [cursor=pointer]:
+                - /url: "#eventos"
+            - listitem [ref=e890]:
+              - link "Piscina" [ref=e891] [cursor=pointer]:
+                - /url: "#piscina"
+        - generic [ref=e896]:
+          - heading "Información" [level=4] [ref=e897]
+          - list [ref=e898]:
+            - listitem [ref=e899]:
+              - link "Nosotros" [ref=e900] [cursor=pointer]:
+                - /url: "#nosotros"
+            - listitem [ref=e901]:
+              - link "Galería" [ref=e902] [cursor=pointer]:
+                - /url: "#galería"
+            - listitem [ref=e903]:
+              - button "Términos y condiciones" [ref=e904] [cursor=pointer]
+      - generic [ref=e905]:
+        - paragraph [ref=e906]: © 2026 Hacienda Solano. Todos los derechos reservados. Contenido protegido y propiedad intelectual registrada.
+        - link "Volver al inicio" [ref=e907] [cursor=pointer]:
+          - /url: "#inicio"
+  - alert [ref=e910]

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es" data-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1" />
+    <title>Hacienda Solano — Banner prueba alojamiento</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../brand/brand-tokens.css" />
+    <link rel="stylesheet" href="../../assets/export.css" />
+    <link rel="stylesheet" href="../../assets/components/button/button.css" />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+
+      html, body {
+        width: 1920px;
+        height: 1080px;
+        min-width: 1920px;
+        min-height: 1080px;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        display: block;
+      }
+
+      body {
+        background: var(--color-warm-cream);
+        font-family: var(--font-body);
+        color: var(--color-deep-green);
+      }
+
+      .banner {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        isolation: isolate;
+        background: #f2eadc;
+      }
+
+      .photo {
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(0.92) contrast(1.02) brightness(0.96);
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          radial-gradient(circle at 18% 22%, rgba(253, 200, 89, 0.12), transparent 26%),
+          linear-gradient(90deg, rgba(245, 241, 230, 0.985) 0%, rgba(245, 241, 230, 0.955) 26%, rgba(245, 241, 230, 0.82) 40%, rgba(245, 241, 230, 0.34) 56%, rgba(26, 51, 28, 0.10) 100%),
+          linear-gradient(180deg, rgba(26, 51, 28, 0.02) 0%, rgba(26, 51, 28, 0.18) 100%);
+      }
+
+      .shape {
+        position: absolute;
+        left: -120px;
+        bottom: -210px;
+        z-index: -1;
+        width: 620px;
+        opacity: 0.08;
+        pointer-events: none;
+      }
+
+      .shape img {
+        width: 100%;
+        height: auto;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 860px;
+        height: 100%;
+        padding: 90px 0 84px 102px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .logo {
+        width: 250px;
+        height: auto;
+      }
+
+      .eyebrow {
+        padding-left: 22px;
+        border-left: 1px solid rgba(26, 51, 28, 0.15);
+        color: rgba(26, 51, 28, 0.68);
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        gap: 28px;
+        margin: auto 0;
+        max-width: 760px;
+      }
+
+      h1 {
+        max-width: 10.5ch;
+        font-family: var(--font-title);
+        font-size: 116px;
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+      }
+
+      .supporting {
+        max-width: 570px;
+        color: rgba(26, 51, 28, 0.74);
+        font-size: 31px;
+        line-height: 1.42;
+        font-weight: 500;
+      }
+
+      .footer {
+        display: flex;
+        align-items: end;
+        gap: 28px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(26, 51, 28, 0.12);
+      }
+
+      .hs-btn {
+        min-height: 58px;
+        padding-inline: 34px;
+        font-size: 15px;
+      }
+
+      .guide {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: rgba(26, 51, 28, 0.82);
+        color: #fff;
+        font-size: 12px;
+      }
+    </style>
+    <script src="../../assets/export.js" defer></script>
+  </head>
+  <body>
+    <main class="banner" data-export-canvas data-export-width="1920" data-export-height="1080" aria-label="Banner prueba de alojamiento Hacienda Solano">
+      <img class="photo" src="../../assets/photos/alojamiento/alojamiento-composicion-base.png" alt="Vista cálida de una experiencia de alojamiento rodeada de naturaleza" />
+      <div class="overlay" aria-hidden="true"></div>
+      <div class="shape" aria-hidden="true">
+        <img src="../../assets/decorative/shapes/shape-03.svg" alt="" />
+      </div>
+
+      <section class="content">
+        <div class="topbar">
+          <img class="logo" src="../../assets/logo/primary/Logotipo.svg" alt="Hacienda Solano" />
+          <p class="eyebrow">Alojamiento</p>
+        </div>
+
+        <div class="hero">
+          <h1>Un refugio para bajar el mundo.</h1>
+          <p class="supporting">Luz suave, naturaleza viva y una pausa que se siente distinta desde el primer momento.</p>
+        </div>
+
+        <div class="footer">
+          <a class="hs-btn hs-btn--primary" href="https://wa.me/51905433158" aria-label="Descubrir la experiencia de alojamiento por WhatsApp">Descubrí la experiencia</a>
+        </div>
+      </section>
+
+      <div class="guide" data-export-ui>Banner prueba · 1920 × 1080</div>
+    </main>
+  </body>
+</html>

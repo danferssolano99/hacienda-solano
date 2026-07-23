@@ -1,0 +1,106 @@
+/* ============================================================
+   Hacienda Solano — Button Component
+   Depends on: ../../../brand/brand-tokens.css
+   Tokens ref: brand/structural-tokens.md §8
+   ============================================================ */
+
+.hs-btn {
+  --btn-radius: 20px;
+  --btn-min-height: 48px;
+  --btn-padding-x: 24px;
+  --btn-font-size: 14px;
+  --btn-tracking: 0.08em;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--btn-radius);
+  min-height: var(--btn-min-height);
+  padding: 0 var(--btn-padding-x);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--btn-font-size);
+  text-transform: uppercase;
+  letter-spacing: var(--btn-tracking);
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    opacity 0.15s ease;
+  border: none;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ---- Primary — CTA principal ---- */
+
+.hs-btn--primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-sun-accent),
+    var(--color-warm-gold)
+  );
+  color: var(--color-deep-green);
+  box-shadow: 0 12px 24px rgba(238, 187, 45, 0.18);
+}
+
+.hs-btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(238, 187, 45, 0.24);
+}
+
+.hs-btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(238, 187, 45, 0.12);
+}
+
+.hs-btn--primary:disabled,
+.hs-btn--primary[aria-disabled="true"] {
+  opacity: 0.45;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---- Secondary — Acción complementaria ---- */
+
+.hs-btn--secondary {
+  background: transparent;
+  border: 1px solid rgba(26, 51, 28, 0.12);
+  color: var(--color-deep-green);
+}
+
+.hs-btn--secondary:hover {
+  background: rgba(26, 51, 28, 0.04);
+}
+
+.hs-btn--secondary:disabled,
+.hs-btn--secondary[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ---- Tertiary — Navegación sin peso ---- */
+
+.hs-btn--tertiary {
+  background: transparent;
+  border: none;
+  color: var(--color-deep-green);
+  opacity: 0.70;
+  min-height: auto;
+  padding: 4px var(--btn-padding-x);
+}
+
+.hs-btn--tertiary:hover {
+  opacity: 1;
+}
+
+.hs-btn--tertiary:disabled,
+.hs-btn--tertiary[aria-disabled="true"] {
+  opacity: 0.30;
+  cursor: not-allowed;
+}

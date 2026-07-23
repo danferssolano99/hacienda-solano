@@ -1,0 +1,12 @@
+- main "Banner prueba de alojamiento Hacienda Solano" [ref=e2]:
+  - img "Vista cálida de una experiencia de alojamiento rodeada de naturaleza" [ref=e3]
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - img "Hacienda Solano" [ref=e7]
+      - paragraph [ref=e8]: Alojamiento
+    - generic [ref=e9]:
+      - heading "Un refugio para bajar el mundo." [level=1] [ref=e10]
+      - paragraph [ref=e11]: Luz suave, naturaleza viva y una pausa que se siente distinta desde el primer momento.
+    - link "Descubrir la experiencia de alojamiento por WhatsApp" [ref=e13] [cursor=pointer]:
+      - /url: https://wa.me/51905433158
+      - text: Descubrí la experiencia

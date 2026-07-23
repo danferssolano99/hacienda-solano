@@ -1,0 +1,24 @@
+- main "Post social de Hacienda Solano para promocionar el domo geodesico y sus amenidades" [ref=e2]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic "Hacienda Solano" [ref=e7]:
+        - strong [ref=e8]: Hacienda Solano
+        - generic [ref=e9]: refugio rural
+      - generic [ref=e10]: GLAMPING EN HACIENDA SOLANO
+    - region [ref=e11]:
+      - generic [ref=e12]: Domo geodesico
+      - heading "Una noche para bajar el ritmo" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Domo geodesico con cama matrimonial, bano privado, agua caliente y WiFi gratuito.
+      - generic "Amenidades del domo" [ref=e16]:
+        - generic [ref=e17]: Cama matrimonial de 2 plazas
+        - generic [ref=e19]: Bano privado exclusivo
+        - generic [ref=e21]: Agua caliente 24h
+        - generic [ref=e23]: WiFi gratuito en todo el recinto
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - strong [ref=e27]: Descubre tu proxima escapada
+          - paragraph [ref=e28]: WhatsApp +51 905 433 158
+        - link "Consultar alojamiento por WhatsApp" [ref=e29] [cursor=pointer]:
+          - /url: https://wa.me/51905433158
+          - text: Escribir por WhatsApp
+  - generic [ref=e30]: Post social 1080 x 1080

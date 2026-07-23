@@ -1,0 +1,21 @@
+- generic [active] [ref=f4e1]:
+  - main "Banner promocional de eventos de Hacienda Solano" [ref=f4e2]:
+    - img "Hacienda Solano" [ref=f4e3]
+    - region "Contenido del banner" [ref=f4e5]:
+      - generic [ref=f4e6]: Eventos Hacienda Solano
+      - generic [ref=f4e7]:
+        - generic [ref=f4e8]: Salón Open Concept
+        - generic [ref=f4e9]: Desde S/ 1,600
+      - heading "Eventos con alma natural." [level=1] [ref=f4e10]
+      - paragraph [ref=f4e11]: Plan Tierra desde S/ 1,600 con 7 horas de celebración, iluminación atmosférica y habitación de cortesía.
+      - generic "Precio de eventos" [ref=f4e12]:
+        - generic [ref=f4e13]: Plan Tierra
+        - strong [ref=f4e14]: Desde S/ 1,600
+        - generic [ref=f4e15]: Una experiencia cálida para celebrar con calma.
+      - generic [ref=f4e16]:
+        - link "Reserva tu fecha" [ref=f4e17] [cursor=pointer]:
+          - /url: https://wa.me/51905433158?text=Hola%20buen%20d%C3%ADa%2C%20deseo%20informaci%C3%B3n%20sobre%20eventos%20en%20Hacienda%20Solano.
+        - generic [ref=f4e18]: WhatsApp +51 905 433 158
+  - generic [ref=f4e20]:
+    - text: "Banner Mixed · 1200x630 · Base real:"
+    - code [ref=f4e21]: assets/photos/eventos/Pista de baile.jpg

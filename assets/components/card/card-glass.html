@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" data-color-scheme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hacienda Solano — Card · Glass</title>
+
+  <!--
+    ⚠️ Glass card solo para digital. No usar en print.
+    Ver brand/structural-tokens.md §6.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Manrope:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../../brand/brand-tokens.css" />
+  <link rel="stylesheet" href="../pill/pill.css" />
+  <link rel="stylesheet" href="card.css" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      padding: 40px 20px;
+
+      /* Fondo natural simulando una foto hero */
+      background:
+        linear-gradient(
+          135deg,
+          rgba(26, 51, 28, 0.55) 0%,
+          rgba(26, 51, 28, 0.25) 100%
+        ),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920&h=1080&fit=crop")
+        center / cover no-repeat;
+    }
+
+    .demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .demo-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(245, 241, 230, 0.45);
+    }
+
+    .demo-label strong {
+      color: rgba(245, 241, 230, 0.75);
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+    <span class="demo-label"><strong>Card · Glass</strong> &mdash; solo digital</span>
+
+    <article class="hs-card hs-card--glass">
+      <div class="hs-card__body">
+        <h3 class="hs-card__title">Viví la experiencia</h3>
+        <p class="hs-card__text">
+          Alojamiento boutique en el corazón de Solano. Despertá con el canto
+          de los pájaros y el aroma del campo.
+        </p>
+        <span class="hs-pill hs-pill--outline">Alojamiento</span>
+      </div>
+    </article>
+  </div>
+</body>
+</html>
