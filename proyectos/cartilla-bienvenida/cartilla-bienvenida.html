@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es" data-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hacienda Solano — Cartilla de Bienvenida</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Manrope:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../brand/brand-tokens.css" />
+    <link rel="stylesheet" href="../../assets/export.css" />
+    <style>
+      /* ── Canvas contract ── */
+      :root {
+        --canvas-width: 1240px;
+        --canvas-height: 1754px;
+        --margin-x: calc(var(--canvas-width) * 0.075);
+        --margin-top: calc(var(--canvas-height) * 0.06);
+        --margin-bottom: calc(var(--canvas-height) * 0.055);
+        --content-width: calc(var(--canvas-width) - var(--margin-x) * 2);
+        --title-size: 3.4rem;
+        --intro-size: 1.15rem;
+        --body-size: 1rem;
+        --label-size: 0.9rem;
+        --small-size: 0.82rem;
+        --section-gap: 3rem;
+        --logo-height: 5rem;
+        --divider-width: 16rem;
+        --font-title: "Fraunces", Georgia, serif;
+        --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+      }
+
+      html {
+        font-size: calc(var(--canvas-width) / 51.667);
+      }
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        background: var(--color-warm-cream);
+      }
+
+      /* ── Canvas surface ── */
+      .canvas {
+        position: relative;
+        width: var(--canvas-width);
+        height: var(--canvas-height);
+        overflow: hidden;
+        isolation: isolate;
+        background: var(--color-warm-cream);
+        font-family: var(--font-body);
+        color: var(--color-deep-green);
+      }
+
+      /* ── Logo (centered at top) ── */
+      .logo {
+        display: flex;
+        justify-content: center;
+        padding-top: var(--margin-top);
+        margin-bottom: 3.2rem;
+      }
+
+      .logo img {
+        display: block;
+        height: var(--logo-height);
+        width: auto;
+        opacity: 0.9;
+      }
+
+      /* ── Content flow ── */
+      .content {
+        width: var(--content-width);
+        max-width: calc(var(--canvas-width) * 0.78);
+        margin: 0 auto;
+        padding-bottom: var(--margin-bottom);
+      }
+
+      /* ── Title ── */
+      .title {
+        margin: 0 0 1.2rem;
+        font-family: var(--font-title);
+        font-size: var(--title-size);
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.025em;
+        color: var(--color-deep-green);
+        text-wrap: balance;
+      }
+
+      /* ── Divider ── */
+      .divider {
+        width: var(--divider-width);
+        height: 0.125rem;
+        margin: 0 0 1.6rem;
+        background: var(--color-sun-accent);
+        border: none;
+        border-radius: 1px;
+        opacity: 0.55;
+      }
+
+      .divider--closing {
+        margin: 2.2rem 0 1.4rem;
+        opacity: 0.4;
+      }
+
+      /* ── Intro paragraph ── */
+      .intro {
+        margin: 0 0 var(--section-gap);
+        font-size: var(--intro-size);
+        font-weight: 400;
+        line-height: 1.55;
+        color: var(--color-deep-green);
+        opacity: 0.88;
+        text-wrap: balance;
+        max-width: calc(var(--content-width) * 0.92);
+      }
+
+      /* ── Section ── */
+      .section {
+        margin-bottom: 2.5rem;
+      }
+
+      .section:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .section__header {
+        margin: 0 0 0.9rem;
+        font-family: var(--font-body);
+        font-size: var(--label-size);
+        font-weight: 600;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--color-brand-green);
+      }
+
+      .section__body {
+        margin: 0;
+        font-size: var(--body-size);
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--color-deep-green);
+        opacity: 0.9;
+        max-width: calc(var(--content-width) * 0.95);
+      }
+
+      .section__body p {
+        margin: 0 0 0.35rem;
+      }
+
+      .section__body p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ── Info list (label + value rows) ── */
+      .info-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .info-list__item {
+        font-size: var(--body-size);
+        line-height: 1.45;
+        color: var(--color-deep-green);
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .info-list__label {
+        font-weight: 600;
+        margin-right: 0.15rem;
+      }
+
+      .info-list__value {
+        font-weight: 400;
+      }
+
+      /* ── Closing ── */
+      .closing {
+        margin: 0;
+        font-size: var(--body-size);
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--color-deep-green);
+        opacity: 0.82;
+        text-wrap: balance;
+        font-style: italic;
+      }
+
+      /* ── Palm ornament ── */
+      .deco-palm {
+        position: absolute;
+        right: -2%;
+        bottom: -2%;
+        width: 52%;
+        height: auto;
+        object-fit: contain;
+        object-position: right bottom;
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+        opacity: 0.12;
+      }
+    </style>
+    <script src="../../assets/export.js" defer></script>
+  </head>
+  <body>
+    <main
+      class="canvas"
+      data-export-canvas
+      data-export-width="1240"
+      data-export-height="1754"
+      aria-label="Cartilla de bienvenida de Hacienda Solano — A4 vertical"
+    >
+      <!-- Decorative layer: palm ornament, behind content -->
+      <img
+        class="deco-palm"
+        src="../../assets/decorative/ornaments/palm-02.svg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <!-- Logo -->
+      <div class="logo">
+        <img
+          src="../../assets/logo/primary/Logotipo.svg"
+          alt="Logotipo Hacienda Solano"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <!-- Title & Intro -->
+        <h1 class="title">Bienvenidos a&nbsp;Hacienda&nbsp;Solano</h1>
+        <hr class="divider" aria-hidden="true" />
+
+        <p class="intro">
+          Gracias por acompañarnos. Esperamos que disfruten una estadía de
+          descanso, calma y conexión con la naturaleza.
+        </p>
+
+        <!-- Section: Información importante -->
+        <div class="section">
+          <h2 class="section__header">Información importante</h2>
+          <ul class="info-list">
+            <li class="info-list__item">
+              <span class="info-list__label">Check-in:</span>
+              <span class="info-list__value">3:00 PM – 11:00 PM</span>
+            </li>
+            <li class="info-list__item">
+              <span class="info-list__label">Check-out:</span>
+              <span class="info-list__value">hasta las 11:00 AM</span>
+            </li>
+            <li class="info-list__item">
+              <span class="info-list__label">Wi‑Fi:</span>
+              <span class="info-list__value">Hacienda Solano visitante</span>
+            </li>
+            <li class="info-list__item">
+              <span class="info-list__label">Clave:</span>
+              <span class="info-list__value">461483661</span>
+            </li>
+            <li class="info-list__item">
+              <span class="info-list__label">Contacto / WhatsApp:</span>
+              <span class="info-list__value">+51 905 433 158</span>
+            </li>
+            <li class="info-list__item">
+              <span class="info-list__label">Horario de atención:</span>
+              <span class="info-list__value">8:00 AM – 11:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Section: Durante tu estadía -->
+        <div class="section">
+          <h2 class="section__header">Durante tu estadía</h2>
+          <div class="section__body">
+            <p>
+              Si necesitás asistencia o tenés alguna consulta, podés escribirnos
+              por WhatsApp.
+            </p>
+            <p>
+              Ante cualquier inconveniente, avisanos de inmediato para poder
+              ayudarte.
+            </p>
+          </div>
+        </div>
+
+        <!-- Section: Cuidado de la habitación -->
+        <div class="section">
+          <h2 class="section__header">Cuidado de la habitación</h2>
+          <div class="section__body">
+            <p>
+              Las manchas permanentes o de difícil remoción en ropa de cama,
+              toallas o textiles podrán generar un cargo adicional por limpieza
+              especializada o reposición.
+            </p>
+            <p>
+              Los daños, roturas o faltantes en la habitación podrán generar un
+              cargo adicional.
+            </p>
+          </div>
+        </div>
+
+        <!-- Closing -->
+        <hr class="divider divider--closing" aria-hidden="true" />
+        <p class="closing">
+          Gracias por ayudarnos a cuidar este espacio pensado para tu descanso.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

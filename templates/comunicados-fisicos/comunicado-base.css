@@ -1,0 +1,193 @@
+/* ============================================================
+   Hacienda Solano — Comunicado Físico (Base CSS)
+   Shared design system for A4 and A3 printed notices.
+   ============================================================ */
+
+/* ── Reset & canvas contract ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Font-size scales with canvas width so A3 is a direct scale of A4.
+     A4  (1754px): 1754 / 109.625 = 16.00px base
+     A3  (2480px): 2480 / 109.625 = 22.62px base          */
+  font-size: calc(var(--canvas-width) / 109.625);
+}
+
+html,
+body {
+  margin: 0;
+}
+
+/* ── Export mode (shared contract) ── */
+html[data-export-mode="export"],
+html[data-export-mode="export"] body {
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  min-width: var(--canvas-width);
+  min-height: var(--canvas-height);
+  overflow: hidden;
+}
+
+html[data-export-mode="export"] body {
+  display: block !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+html[data-export-mode="export"] [data-export-canvas] {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: var(--canvas-width) var(--canvas-height);
+  }
+
+  html,
+  body {
+    width: var(--canvas-width) !important;
+    height: var(--canvas-height) !important;
+    min-width: var(--canvas-width) !important;
+    min-height: var(--canvas-height) !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  [data-export-canvas] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ── Canvas surface ── */
+.canvas {
+  position: relative;
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-warm-cream);
+  font-family: var(--font-body);
+  color: var(--color-deep-green);
+}
+
+/* ── Signature logo (top-right) ── */
+.signature {
+  position: absolute;
+  top: var(--margin-top);
+  right: var(--margin-x);
+  z-index: 2;
+}
+
+.signature img {
+  display: block;
+  height: var(--logo-height);
+  width: auto;
+  opacity: 0.88;
+}
+
+/* ── Main content block (left-aligned) ── */
+.content {
+  position: absolute;
+  top: 50%;
+  left: var(--margin-x);
+  transform: translateY(-50%);
+  max-width: calc(var(--canvas-width) * 0.88);
+  z-index: 2;
+}
+
+/* ── Title ── */
+.title {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: var(--title-size);
+  font-weight: 700;
+  line-height: var(--leading-title);
+  letter-spacing: -0.04em;
+  color: var(--color-deep-green);
+  text-wrap: balance;
+}
+
+/* ── Divider ── */
+.divider {
+  width: var(--divider-width, 18rem);
+  height: 0.125rem;
+  margin: var(--divider-gap) 0;
+  background: var(--color-sun-accent);
+  border: none;
+  border-radius: 1px;
+}
+
+/* ── Secondary text ── */
+.secondary {
+  max-width: 42rem;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--secondary-size);
+  font-weight: 600;
+  line-height: var(--leading-body);
+  color: var(--color-deep-green);
+  text-wrap: balance;
+}
+
+/* ── Detail text (optional, below secondary) ── */
+.detail {
+  max-width: 44rem;
+  margin: var(--detail-gap) 0 0;
+  font-family: var(--font-body);
+  font-size: var(--detail-size);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  color: rgba(26, 51, 28, 0.72);
+}
+
+/* ══════════════════════════════════════════════════════
+   Decorative layers — organic accents, behind content
+   §3.2: acentos, no contenedores de contenido
+   §4.5: no deben reducir legibilidad
+   ══════════════════════════════════════════════════════ */
+
+.deco-layer {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── Palm ornament (right side, base at bottom, mirrored) ── */
+.deco-palm {
+  position: absolute;
+  right: 0;
+  bottom: -6%;
+  height: 86%;
+  width: auto;
+  object-fit: contain;
+  object-position: right bottom;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transform: scaleX(-1);
+}
+
+/* ── Bottom accent line (optional subtle framing) ── */
+.accent-bottom {
+  position: absolute;
+  bottom: var(--margin-bottom);
+  left: var(--margin-x);
+  right: var(--margin-x);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(26, 51, 28, 0.06) 20%,
+    rgba(26, 51, 28, 0.06) 80%,
+    transparent 100%
+  );
+  z-index: 1;
+}

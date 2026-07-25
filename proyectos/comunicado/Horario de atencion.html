@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es" data-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hacienda Solano — Comunicado A4</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Manrope:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../brand/brand-tokens.css" />
+    <style>
+      :root {
+        --canvas-width: 1754px;
+        --canvas-height: 1240px;
+        --margin-x: calc(var(--canvas-width) * 0.065);
+        --margin-top: calc(var(--canvas-height) * 0.078);
+        --margin-bottom: calc(var(--canvas-height) * 0.065);
+        --title-size: 11rem;
+        --secondary-size: 3.5rem;
+        --detail-size: 2.5rem;
+        --logo-height: 6rem;
+        --divider-gap: 2rem;
+        --detail-gap: 1.25rem;
+        --divider-width: 18rem;
+        --font-title: "Fraunces", Georgia, serif;
+        --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+        --leading-title: 1.05;
+        --leading-body: 1.45;
+      }
+    </style>
+    <link rel="stylesheet" href="../../templates/comunicados-fisicos/comunicado-base.css" />
+    <script src="../../assets/export.js" defer></script>
+  </head>
+  <body>
+    <main
+      class="canvas"
+      data-export-canvas
+      data-export-width="1754"
+      data-export-height="1240"
+      aria-label="Comunicado impreso de Hacienda Solano — A4 horizontal"
+    >
+      <img
+        class="deco-palm"
+        src="../../assets/decorative/ornaments/palm-02.svg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <div class="signature" aria-label="Hacienda Solano">
+        <img
+          src="../../assets/logo/primary/Logotipo.svg"
+          alt="Logotipo Hacienda Solano"
+        />
+      </div>
+
+      <div class="content">
+        <h1 class="title">
+          Horario de<br />
+          Atención
+        </h1>
+
+        <hr class="divider" aria-hidden="true" />
+
+        <p class="secondary">
+          Lunes a Domingo — 8:00 AM a 11:00 PM
+        </p>
+
+        <p class="detail">
+          Nuestro equipo está disponible todos los días para asegurar
+          que tu estadía sea perfecta, desde la mañana hasta la noche.
+        </p>
+      </div>
+
+      <div class="accent-bottom" aria-hidden="true"></div>
+    </main>
+  </body>
+</html>

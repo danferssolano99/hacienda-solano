@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es" data-color-scheme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hacienda Solano — Contacto A4</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Manrope:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../brand/brand-tokens.css" />
+    <style>
+      :root {
+        --canvas-width: 1754px;
+        --canvas-height: 1240px;
+        --margin-x: calc(var(--canvas-width) * 0.065);
+        --margin-top: calc(var(--canvas-height) * 0.078);
+        --margin-bottom: calc(var(--canvas-height) * 0.065);
+        --title-size: 4.5rem;
+        --secondary-size: 9rem;
+        --detail-size: 2.5rem;
+        --logo-height: 6rem;
+        --divider-gap: 1.5rem;
+        --detail-gap: 1.25rem;
+        --divider-width: 18rem;
+        --font-title: "Fraunces", Georgia, serif;
+        --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+        --leading-title: 1.05;
+        --leading-body: 1.45;
+        --contact-gap: 1.5rem;
+        --whatsapp-size: 4.5rem;
+      }
+
+      .content {
+        max-width: calc(var(--canvas-width) * 0.9);
+      }
+
+      .title {
+        font-weight: 400;
+        letter-spacing: -0.02em;
+      }
+
+      .contact-line {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--contact-gap);
+        margin: 0;
+        font-size: var(--secondary-size);
+        font-weight: 600;
+        line-height: 1.08;
+        color: var(--color-deep-green);
+        white-space: nowrap;
+      }
+
+      .contact-line img {
+        width: var(--whatsapp-size);
+        height: var(--whatsapp-size);
+        flex: 0 0 auto;
+      }
+    </style>
+    <link rel="stylesheet" href="../../templates/comunicados-fisicos/comunicado-base.css" />
+    <script src="../../assets/export.js" defer></script>
+  </head>
+  <body>
+    <main
+      class="canvas"
+      data-export-canvas
+      data-export-width="1754"
+      data-export-height="1240"
+      aria-label="Comunicado impreso de Hacienda Solano — contacto A4 horizontal"
+    >
+      <img
+        class="deco-palm"
+        src="../../assets/decorative/ornaments/palm-02.svg"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <div class="signature" aria-label="Hacienda Solano">
+        <img
+          src="../../assets/logo/primary/Logotipo.svg"
+          alt="Logotipo Hacienda Solano"
+        />
+      </div>
+
+      <div class="content">
+        <h1 class="title">Contacto</h1>
+
+        <hr class="divider" aria-hidden="true" />
+
+        <p class="contact-line">
+          <img src="../../assets/icons/whatsapp.svg" alt="" aria-hidden="true" />
+          <span>905 433 158</span>
+        </p>
+      </div>
+
+      <div class="accent-bottom" aria-hidden="true"></div>
+    </main>
+  </body>
+</html>

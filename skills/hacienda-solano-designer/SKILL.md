@@ -175,11 +175,11 @@ Aplicar durante la producción. Cada regla es vinculante.
 
 ---
 
-## 4. Revisar
+## 4. Revisar y validar
 
-Gate obligatorio de diseño antes de validar técnicamente.
+Gate obligatorio antes de exportar. No alcanza con que la pieza se vea linda: debe entenderse rápido, sostener la jerarquía correcta y leerse bien en el contexto real de uso.
 
-### 4.1 Límites de contenido
+### 4.1 Contenido y jerarquía
 
 | Bloque | Máximo |
 |--------|--------|
@@ -212,23 +212,66 @@ Para cada bloque de texto, responder:
 
 Si la respuesta es `no`, `no`, `sí` → eliminarlo.
 
-### 4.5 Checklist de salida
+### 4.5 Legibilidad según soporte
 
-- ¿Hay un solo mensaje principal?
-- ¿Hay más de un CTA?
-- ¿Hay más de un bloque auxiliar?
-- ¿Algún bloque repite lo que ya dice otro?
-- ¿La pieza se entiende más rápido si saco algo?
+Primero definir el soporte real. No revisar impresión con criterio de pantalla ni revisar digital con criterio de cartel físico.
 
-Si alguna respuesta es incorrecta, podar y revisar de nuevo. No pasar a Validar hasta que pase.
+#### Digital
 
----
+- Priorizar claridad inmediata y jerarquía visual.
+- El texto debe seguir siendo legible en el tamaño real de publicación.
+- No reducir textos por refinamiento estético si afecta la lectura.
 
-## 5. Validar
+#### Impreso
+
+Antes de aprobar una pieza impresa, definir la **distancia de lectura esperada**:
+
+- **Corta** — mano, mostrador, puerta cercana, recepción inmediata
+- **Media** — pared, pasillo, acceso, recepción a pocos metros
+- **Larga** — exterior, ingreso vehicular, lectura a varios metros
+
+**Reglas obligatorias para impresión:**
+- El mensaje principal debe ocupar una porción visual dominante del canvas. Si sobra demasiado aire y falta presencia del mensaje, la pieza falla.
+- El texto secundario no puede caer a un tamaño que obligue a acercarse más de lo previsto.
+- Si la distancia de lectura aumenta, el tamaño del mensaje debe crecer y la cantidad de texto debe bajar.
+- No usar una composición "elegante" si sacrifica lectura rápida.
+- En señalética operativa, la legibilidad manda por encima del refinamiento.
+
+**Mínimos recomendados para impresión:**
+- **Distancia corta**
+  - mensaje principal: mínimo 32 pt
+  - texto secundario: mínimo 18 pt
+- **Distancia media**
+  - mensaje principal: mínimo 60 pt
+  - texto secundario: mínimo 24 pt
+- **Distancia larga**
+  - evitar bloques secundarios extensos
+  - mensaje principal: escalar hasta dominar claramente el soporte
+  - si no se lee en 2 segundos, rehacer
+
+**Regla de uso del espacio:**
+- Si el mensaje es corto y el soporte es grande, escalar el mensaje.
+- No conservar aire "premium" a costa de impacto o legibilidad.
+- En impresos funcionales, el espacio libre debe servir al mensaje, no debilitarlo.
+
+**Regla de legibilidad del logo:**
+
+El logo debe ser legible como firma de marca, no solo estar "presente". Para impresión:
+- El texto del lockup (nombre "Hacienda Solano") debe leerse sin esfuerzo a la distancia prevista.
+- Si el logo completo no es legible al tamaño mínimo de la distancia esperada, escalar el logo hasta que el nombre sea legible.
+- Si escalar el logo completo desbalancea la composición, preguntar al usuario si prefiere usar solo el símbolo (ícono) sin el lockup de texto.
+- No aceptar un logo que está pero no se lee.
+
+**Mínimos orientativos para el lockup del logo en impresión:**
+- **Distancia corta** — altura mínima del lockup: 72 pt
+- **Distancia media** — altura mínima del lockup: 96 pt
+- **Distancia larga** — altura mínima del lockup: 120 pt o escalar hasta que el nombre sea claramente legible, lo que resulte mayor
+
+### 4.6 Verificación técnica y render
 
 Gate técnico. No inspeccionar solo el código. Validar el resultado renderizado.
 
-### 5.1 Contrato de diseño
+#### 4.6.1 Contrato de diseño
 
 ```powershell
 powershell -File tools/validate-design.ps1 -InputHtml "proyectos/<nombre-proyecto>/nombre-pieza.html"
@@ -236,14 +279,15 @@ powershell -File tools/validate-design.ps1 -InputHtml "proyectos/<nombre-proyect
 
 Si falla, corregir y repetir.
 
-### 5.2 Render visual
+#### 4.6.2 Render visual
 
 1. Abrir la pieza en el navegador a las dimensiones exactas del formato final.
 2. Tomar captura de pantalla.
 3. Verificar: jerarquía, espaciado, legibilidad, visibilidad del CTA, zonas seguras, recorte, tono de marca.
-4. Si algo falla, corregir y repetir desde el paso 1.
+4. Si es impreso, verificar además lectura a la distancia esperada y uso suficiente del espacio disponible.
+5. Si algo falla, corregir y repetir desde el paso 1.
 
-### 5.3 Regla de formato
+#### 4.6.3 Regla de formato
 
 - Validar en el tamaño final real para el que fue diseñada.
 - No usar desktop/mobile como sustituto.
@@ -251,13 +295,28 @@ Si falla, corregir y repetir.
 - Story 1080x1920 → validar en 1080x1920.
 - Múltiples medidas → cada una es una validación independiente.
 
+### 4.7 Checklist final
+
+- ¿Hay un solo mensaje principal?
+- ¿Hay más de un CTA?
+- ¿Hay más de un bloque auxiliar?
+- ¿Algún bloque repite lo que ya dice otro?
+- ¿La pieza se entiende más rápido si saco algo?
+- ¿El mensaje principal domina de verdad el soporte?
+- ¿La distancia de lectura prevista está resuelta?
+- ¿La pieza usa bien el espacio disponible?
+- ¿Se priorizó legibilidad por encima del adorno?
+- Si la pieza lleva logo: ¿el nombre del lockup se lee claramente a la distancia prevista?
+
+Si alguna respuesta falla, corregir antes de exportar.
+
 ---
 
-## 6. Exportar
+## 5. Exportar
 
 Solo después de pasar Revisar y Validar.
 
-### 6.1 PNG maestro (digital)
+### 5.1 PNG maestro (digital)
 
 Usar el script del proyecto, que exporta el canvas final mediante Playwright CLI en modo `?export=1`.
 
@@ -265,7 +324,7 @@ Usar el script del proyecto, que exporta el canvas final mediante Playwright CLI
 powershell -File tools/export.ps1 -InputHtml "proyectos/<nombre-proyecto>/nombre-pieza.html" -OutputPng "proyectos/<nombre-proyecto>/nombre-pieza.png"
 ```
 
-### 6.2 PDF (impresión)
+### 5.2 PDF (impresión)
 
 Usar el script del proyecto, que genera un PDF nativo desde HTML en modo `?export=1`, apoyado por las reglas de impresión del contrato de export para preservar tamaño del canvas, fondos y texto vectorial.
 
@@ -273,7 +332,7 @@ Usar el script del proyecto, que genera un PDF nativo desde HTML en modo `?expor
 powershell -File tools/export-pdf.ps1 -InputHtml "proyectos/<nombre-proyecto>/nombre-pieza.html" -OutputPdf "proyectos/<nombre-proyecto>/nombre-pieza.pdf"
 ```
 
-### 6.3 Verificación
+### 5.3 Verificación
 
 - Confirmar que los archivos exportados existen.
 - Confirmar que cada archivo exportado existe en su carpeta correspondiente dentro de `proyectos/<nombre-proyecto>/`.
