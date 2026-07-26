@@ -1,0 +1,54 @@
+- main "Cartilla de bienvenida de Hacienda Solano — A4 vertical" [ref=f3e2]:
+  - img "Logotipo Hacienda Solano" [ref=f3e4]
+  - generic [ref=f3e5]:
+    - heading "Bienvenidos a Hacienda Solano" [level=1] [ref=f3e6]
+    - separator [ref=f3e7]
+    - paragraph [ref=f3e8]: Gracias por acompañarnos. Esperamos que disfruten una estadía de descanso, calma y conexión con la naturaleza.
+    - generic [ref=f3e9]:
+      - heading "Información importante" [level=2] [ref=f3e10]
+      - list [ref=f3e11]:
+        - listitem [ref=f3e12]:
+          - generic [ref=f3e13]: "Check-in:"
+          - generic [ref=f3e14]: 3:00 PM – 11:00 PM
+        - listitem [ref=f3e15]:
+          - generic [ref=f3e16]: "Check-out:"
+          - generic [ref=f3e17]: hasta las 11:00 AM
+        - listitem [ref=f3e18]:
+          - generic [ref=f3e19]: "Wi‑Fi:"
+          - generic [ref=f3e20]: Hacienda Solano visitante
+        - listitem [ref=f3e21]:
+          - generic [ref=f3e22]: "Clave:"
+          - generic [ref=f3e23]: "461483661"
+        - listitem [ref=f3e24]:
+          - generic [ref=f3e25]: "Contacto / WhatsApp:"
+          - generic [ref=f3e26]: +51 905 433 158
+        - listitem [ref=f3e27]:
+          - generic [ref=f3e28]: "Horario de atención:"
+          - generic [ref=f3e29]: 8:00 AM – 11:00 PM
+    - generic [ref=f3e30]:
+      - heading "Durante tu estadía" [level=2] [ref=f3e31]
+      - generic [ref=f3e32]:
+        - generic [ref=f3e33]:
+          - paragraph [ref=f3e34]: Si deseás agua caliente, solicítala y estará lista en aproximadamente 30 minutos.
+          - paragraph [ref=f3e35]: Si necesitás asistencia o tenés alguna consulta, podés escribirnos por WhatsApp.
+          - paragraph [ref=f3e36]: Ante cualquier inconveniente, avisanos de inmediato para poder ayudarte.
+          - paragraph [ref=f3e37]: También podés solicitar comidas o bebidas escaneando nuestro código QR.
+        - generic "Código QR de comidas y bebidas" [ref=f3e38]:
+          - img "Código QR para ver la cartilla digital de comidas y bebidas" [ref=f3e40]
+          - paragraph [ref=f3e41]: Escaneá este código para consultar opciones de comidas y bebidas.
+    - generic [ref=f3e42]:
+      - heading "Redes y contacto" [level=2] [ref=f3e43]
+      - list [ref=f3e44]:
+        - listitem [ref=f3e45]:
+          - generic [ref=f3e47]: WhatsApp — +51 905 433 158
+        - listitem [ref=f3e48]:
+          - generic [ref=f3e50]: facebook.com/haciendasolanoperu
+        - listitem [ref=f3e51]:
+          - generic [ref=f3e53]: haciendasolano.vercel.app
+    - generic [ref=f3e54]:
+      - heading "Cuidado de la habitación" [level=2] [ref=f3e55]
+      - generic [ref=f3e56]:
+        - paragraph [ref=f3e57]: Las manchas permanentes o de difícil remoción en ropa de cama, toallas o textiles podrán generar un cargo adicional por limpieza especializada o reposición.
+        - paragraph [ref=f3e58]: Los daños, roturas o faltantes en la habitación podrán generar un cargo adicional.
+    - separator [ref=f3e59]
+    - paragraph [ref=f3e60]: Gracias por ayudarnos a cuidar este espacio pensado para tu descanso.
