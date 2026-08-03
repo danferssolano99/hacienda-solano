@@ -11,12 +11,62 @@ $outputPath = [System.IO.Path]::GetFullPath($OutputPdf)
 $outputDirectory = Split-Path -Parent $outputPath
 $source = Get-Content -LiteralPath $inputPath -Raw
 
+function Convert-ToMillimeters {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$Value
+  )
+
+  $match = [regex]::Match($Value.Trim(), '^(?<amount>\d+(?:\.\d+)?)(?<unit>mm|cm|in|px|pt)$')
+  if (-not $match.Success) {
+    throw "Unsupported print size '$Value'. Use mm, cm, in, pt, or px."
+  }
+
+  $amount = [double]$match.Groups['amount'].Value
+  switch ($match.Groups['unit'].Value) {
+    'mm' { return $amount }
+    'cm' { return $amount * 10 }
+    'in' { return $amount * 25.4 }
+    'pt' { return $amount * 25.4 / 72 }
+    'px' { return $amount * 25.4 / 96 }
+    default { throw "Unsupported print unit in '$Value'." }
+  }
+}
+
+function Get-PdfPageSizeMillimeters {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$PdfPath
+  )
+
+  $bytes = [System.IO.File]::ReadAllBytes($PdfPath)
+  $text = [System.Text.Encoding]::ASCII.GetString($bytes)
+  $mediaBoxMatch = [regex]::Match($text, '/MediaBox\s*\[\s*0\s+0\s+(?<width>[0-9.]+)\s+(?<height>[0-9.]+)\s*\]')
+  if (-not $mediaBoxMatch.Success) {
+    throw "Could not read PDF page size from MediaBox: $PdfPath"
+  }
+
+  return [pscustomobject]@{
+    WidthMm = ([double]$mediaBoxMatch.Groups['width'].Value) * 25.4 / 72
+    HeightMm = ([double]$mediaBoxMatch.Groups['height'].Value) * 25.4 / 72
+  }
+}
+
 $widthMatch = [regex]::Match($source, 'data-export-width="(\d+)"')
 $heightMatch = [regex]::Match($source, 'data-export-height="(\d+)"')
+$printWidthMatch = [regex]::Match($source, 'data-print-width="([^"]+)"')
+$printHeightMatch = [regex]::Match($source, 'data-print-height="([^"]+)"')
 
 if ($source -notmatch 'data-export-canvas' -or -not $widthMatch.Success -or -not $heightMatch.Success) {
   throw "Input HTML must declare the export canvas and its dimensions."
 }
+
+if (-not $printWidthMatch.Success -or -not $printHeightMatch.Success) {
+  throw "Input HTML must declare data-print-width and data-print-height for exact PDF export size."
+}
+
+$expectedWidthMm = Convert-ToMillimeters $printWidthMatch.Groups[1].Value
+$expectedHeightMm = Convert-ToMillimeters $printHeightMatch.Groups[1].Value
 
 if ($source -match '<img\b[^>]*\bsrc\s*=\s*["'']\s*["'']') {
   throw "Input HTML contains an image with an empty src. Add the real local asset before exporting."
@@ -77,6 +127,13 @@ try {
 
   if (-not (Test-Path -LiteralPath $tempPdfPath)) {
     throw "PDF export did not produce the expected file: $tempPdfPath"
+  }
+
+  $pageSize = Get-PdfPageSizeMillimeters -PdfPath $tempPdfPath
+  $widthDelta = [math]::Abs($pageSize.WidthMm - $expectedWidthMm)
+  $heightDelta = [math]::Abs($pageSize.HeightMm - $expectedHeightMm)
+  if ($widthDelta -gt 0.5 -or $heightDelta -gt 0.5) {
+    throw "PDF export size mismatch. Expected $expectedWidthMm x $expectedHeightMm mm, got $([math]::Round($pageSize.WidthMm, 2)) x $([math]::Round($pageSize.HeightMm, 2)) mm."
   }
 
   Remove-Item -LiteralPath $outputPath -Force -ErrorAction SilentlyContinue

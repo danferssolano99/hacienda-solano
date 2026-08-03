@@ -40,6 +40,7 @@ No saltar a producción. Armar el brief con una pregunta a la vez.
 ★ 1. ¿Cuál es el objetivo de negocio: atraer, considerar o convertir?
 ★ 2. ¿Qué debe entender el espectador en 2 segundos?
 ★ 3. ¿Cuál es el formato final exacto? (post, story, banner, flyer, impresión personalizada, etc.)
+  Si es impresión, preguntar además antes de producir: ¿la imprenta necesita archivo a tamaño final exacto o archivo escalado para gran formato?
   4. ¿Dónde se usará? (hero, banner, social, landing)
   5. ¿Debe destacar precio, promo, experiencia o solo atmósfera?
   6. ¿Hay texto, oferta, contacto o restricción obligatoria?
@@ -57,9 +58,22 @@ Antes de producir, fijar estas decisiones en orden:
 1. **Objetivo de negocio** — una frase.
 2. **Estado de la audiencia** — descubrimiento, consideración o conversión.
 3. **Formato final** — tamaño exacto, orientación y contexto de uso. No asumir responsive. No tratar la pieza como componente de sistema. Si el usuario pide varias salidas, cada una es una variante independiente.
+4. **Modo de impresión** — si la pieza es impresa, fijar uno de estos dos antes de diseñar o exportar:
+
+| Modo | Cuándo usar | Qué significa |
+|------|-------------|----------------|
+| **Exact print** | A3, A4, flyers, carteles pequeños o cuando la imprenta pide medida final real | El arte y el PDF final salen en la medida física final exacta |
+| **Scaled large-format** | Banner gigante, lona, backing, gigantografía o cuando la imprenta acepta escala | El arte y el PDF salen en una escala definida (`1:2`, `1:4`, `1:10`, etc.), pero siempre documentando tamaño final real y escala |
+
+**Reglas duras del modo de impresión:**
+- Nunca asumir que la imprenta va a escalar correctamente sin instrucción explícita.
+- Si el usuario no sabe, preguntar si la imprenta pidió tamaño final real o archivo a escala para gran formato. Si no hay respuesta, no exportar PDF de imprenta todavía.
+- En `Exact print`, el PDF debe declarar la medida física final real.
+- En `Scaled large-format`, registrar tres datos: tamaño final real, escala de trabajo/exportación y tamaño físico del PDF exportado.
+- Nunca mezclar "diseñado chico" con "entregado chico" sin declarar escala.
 
 **Regla dura para artes finales:** una pieza de marketing exportable se diseña contra un canvas fijo. No usar breakpoints, layout responsive, ni `@media` para alterar jerarquía, tamaños o estructura del arte final, salvo que el usuario haya pedido explícitamente variantes separadas por formato. Si hacen falta varias medidas, se construyen como archivos/variantes independientes, no como un solo layout adaptable.
-4. **Modo de producción** — preguntar al usuario si no lo especificó:
+5. **Modo de producción** — preguntar al usuario si no lo especificó:
 
 | Modo | Qué produce |
 |------|-------------|
@@ -67,7 +81,7 @@ Antes de producir, fijar estas decisiones en orden:
 | **Image prompt** | Concepto visual estático para generación de imágenes |
 | **Mixed** | Base visual generada + capa HTML/CSS editable encima |
 
-5. **Arquetipo de composición** — elegir uno, no improvisar:
+6. **Arquetipo de composición** — elegir uno, no improvisar:
 
 | Arquetipo | Cuándo usar | Lógica de composición | Peso del CTA |
 |-----------|-------------|----------------------|--------------|
@@ -76,8 +90,8 @@ Antes de producir, fijar estas decisiones en orden:
 | **Quiet Conversion Strip** | Banner horizontal para reserva directa | Mensaje limpio, una línea de apoyo, CTA obvio, mínima interrupción visual | Alto pero contenido |
 | **Framed Premium Offer** | Promo o propuesta de valor elegante | Oferta integrada en marco refinado, nunca como sticker o insignia | Medio |
 
-6. **Mensaje dominante** — qué entiende el espectador en 2 segundos.
-7. **Prioridad atmósfera vs conversión** — cuál lidera.
+7. **Mensaje dominante** — qué entiende el espectador en 2 segundos.
+8. **Prioridad atmósfera vs conversión** — cuál lidera.
 
 **Regla de prioridad:**
 - Descubrimiento → atmósfera lidera, CTA apoya.
@@ -94,6 +108,7 @@ Ejecutar solo el flujo del modo elegido.
 
 - Brand tokens: `conocimiento/brand/structural-tokens.md`
 - Datos de negocio: `conocimiento/conocimiento-del-negocio.md`
+- Si el destino es impresión, leer también `references/print.md`
 - Decisiones de diseño: paso 2 completo
 - Fotos reales: `assets/photos/` organizadas por servicio
 - Componentes reutilizables: `assets/components/`, `ui-lab.html`
@@ -152,11 +167,19 @@ Aplicar durante la producción. Cada regla es vinculante.
 ### 3.3 Modo HTML/CSS
 
 1. Leer assets: logos (`assets/logo/`), fotos (`assets/photos/`), CSS tokens, componentes (`assets/components/`), decorativos (`assets/decorative/`), íconos (`assets/icons/`), `ui-lab.html`
-2. Fijar el canvas al formato final aprobado
-3. Escribir HTML/CSS completo aplicando las reglas de 3.2
-4. No introducir breakpoints responsive para el arte final. Si el export es `1080x1080`, el HTML debe preservarse exactamente en `1080x1080`.
-5. Guardar en `proyectos/<nombre-proyecto>/nombre-pieza.html`
-6. Ejecutar `tools/validate-design.ps1` contra el archivo. Corregir cualquier violación.
+2. Si es impreso, fijar también el contrato físico antes de diseñar:
+   - `Exact print` → canvas y PDF orientados al tamaño final real
+   - `Scaled large-format` → canvas y PDF orientados al tamaño escalado elegido, pero documentando además el tamaño final real y la escala
+3. Fijar el canvas al formato aprobado para esa variante
+4. Escribir HTML/CSS completo aplicando las reglas de 3.2
+5. No introducir breakpoints responsive para el arte final. Si el export es `1080x1080`, el HTML debe preservarse exactamente en `1080x1080`.
+6. Si es PDF de impresión, declarar `data-print-width` y `data-print-height` en la medida física que se va a exportar:
+   - `Exact print` → medida final real
+   - `Scaled large-format` → medida física escalada del PDF
+7. Si la pieza es print en HTML, cargar `brand/brand-print-tokens.css` después de `brand/brand-tokens.css` para usar la paleta print del proyecto.
+8. Si es `Scaled large-format`, documentar dentro de `brief.md` o junto al entregable: tamaño final real, escala elegida y tamaño exportado.
+9. Guardar en `proyectos/<nombre-proyecto>/nombre-pieza.html`
+10. Ejecutar `tools/validate-design.ps1` contra el archivo. Corregir cualquier violación.
 
 ### 3.4 Modo Image prompt
 
@@ -295,6 +318,11 @@ Si falla, corregir y repetir.
 - Story 1080x1920 → validar en 1080x1920.
 - Múltiples medidas → cada una es una validación independiente.
 
+**Regla adicional para impresión:**
+- `Exact print` → validar contra la medida física final real.
+- `Scaled large-format` → validar contra la medida escalada elegida y revisar que la escala preserve legibilidad respecto del tamaño final real.
+- Si un banner gigante se diseña a escala, no aprobar solo porque se ve bien en el tamaño reducido; revisar la legibilidad proyectada al tamaño final.
+
 ### 4.7 Checklist final
 
 - ¿Hay un solo mensaje principal?
@@ -326,7 +354,11 @@ powershell -File tools/export.ps1 -InputHtml "proyectos/<nombre-proyecto>/nombre
 
 ### 5.2 PDF (impresión)
 
-Usar el script del proyecto, que genera un PDF nativo desde HTML en modo `?export=1`, apoyado por las reglas de impresión del contrato de export para preservar tamaño del canvas, fondos y texto vectorial.
+Usar el script del proyecto, que genera un PDF nativo desde HTML en modo `?export=1`, apoyado por las reglas de impresión del contrato de export para preservar tamano fisico, fondos y texto vectorial.
+
+**Antes de exportar, decidir cuál de estos dos casos aplica:**
+- `Exact print` → declarar `data-print-width` y `data-print-height` con la medida final exacta elegida por el usuario, por ejemplo `420mm x 297mm` para A3 horizontal o `297mm x 210mm` para A4 horizontal.
+- `Scaled large-format` → declarar `data-print-width` y `data-print-height` con la medida escalada que se va a entregar, y dejar documentados el tamano final real y la escala usada.
 
 ```powershell
 powershell -File tools/export-pdf.ps1 -InputHtml "proyectos/<nombre-proyecto>/nombre-pieza.html" -OutputPdf "proyectos/<nombre-proyecto>/nombre-pieza.pdf"
@@ -336,8 +368,10 @@ powershell -File tools/export-pdf.ps1 -InputHtml "proyectos/<nombre-proyecto>/no
 
 - Confirmar que los archivos exportados existen.
 - Confirmar que cada archivo exportado existe en su carpeta correspondiente dentro de `proyectos/<nombre-proyecto>/`.
-- Confirmar que las dimensiones coinciden exactamente con el canvas declarado.
+- Confirmar que las dimensiones del PNG coinciden exactamente con el canvas declarado.
 - Para digital, verificar nitidez suficiente para publicación.
-- Para impresión, verificar que el PDF incluya fondos y no recorte contenido.
+- Para impresion, verificar que el PDF incluya fondos, no recorte contenido y que su pagina fisica coincida con `data-print-width` y `data-print-height`.
+- En `Scaled large-format`, verificar ademas que el entregable documente claramente: tamano final real, escala de entrega y tamano fisico exportado.
+- Si la pieza es print en HTML, verificar que use `brand-print-tokens.css` y no solo la paleta web base.
 
 ---

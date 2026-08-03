@@ -28,6 +28,14 @@
 
 > Los amarillos y dorados pierden saturación en CMYK. Para impresiones premium, considerar tintas spot (Pantone).
 
+## Tokens print en HTML
+
+- Los HTML de impresión del proyecto no exportan CMYK real; el navegador sigue renderizando en RGB.
+- Para piezas print en HTML, usar `brand/brand-print-tokens.css` encima de `brand/brand-tokens.css`.
+- Esa capa print ajusta la paleta web hacia equivalentes visuales más cercanos a la intención CMYK documentada.
+- Esto mejora consistencia visual, pero NO reemplaza una conversión CMYK con perfil ICC cuando la imprenta exige color gestionado.
+- Si la imprenta pide archivo CMYK final o perfil específico, confirmar perfil ICC, papel y proceso de impresión antes de cerrar el entregable.
+
 ## Papelería recomendada
 
 - **Sustrato:** Papel texturado mate o semi-mate de 250-350 g/m².

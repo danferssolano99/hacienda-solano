@@ -1,0 +1,24 @@
+/* ============================================================
+   Hacienda Solano — Print Color Tokens
+   Approximate CMYK-intent palette adapted back into browser-safe RGB.
+   Use this file only for print-targeted HTML exports.
+   ============================================================ */
+
+:root {
+  /* Derived from references/print.md CMYK approximations.
+     These remain RGB CSS values because browser PDF export is not CMYK-managed. */
+  --color-deep-green: #17321b;
+  --color-brand-green: #3d6332;
+  --color-sun-accent: #f2c45c;
+  --color-warm-gold: #dfb13b;
+  --color-warm-cream: #f2eee4;
+  --color-white: #ffffff;
+
+  --bg-primary: var(--color-warm-cream);
+  --bg-surface: var(--color-white);
+  --text-primary: var(--color-deep-green);
+  --text-title: var(--color-deep-green);
+  --text-accent: var(--color-brand-green);
+  --highlight: var(--color-sun-accent);
+  --border-color: var(--color-warm-gold);
+}

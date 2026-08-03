@@ -46,20 +46,24 @@ html[data-export-mode="export"] [data-export-canvas] {
 @media print {
   @page {
     margin: 0;
-    size: var(--canvas-width) var(--canvas-height);
+    size: var(--print-width, var(--canvas-width)) var(--print-height, var(--canvas-height));
   }
 
   html,
   body {
-    width: var(--canvas-width) !important;
-    height: var(--canvas-height) !important;
-    min-width: var(--canvas-width) !important;
-    min-height: var(--canvas-height) !important;
+    width: var(--print-width, var(--canvas-width)) !important;
+    height: var(--print-height, var(--canvas-height)) !important;
+    min-width: var(--print-width, var(--canvas-width)) !important;
+    min-height: var(--print-height, var(--canvas-height)) !important;
     overflow: hidden !important;
     margin: 0 !important;
   }
 
   [data-export-canvas] {
+    width: var(--canvas-width) !important;
+    height: var(--canvas-height) !important;
+    transform-origin: top left !important;
+    transform: scale(var(--print-scale-x, 1), var(--print-scale-y, 1)) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
   }

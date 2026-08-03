@@ -61,8 +61,10 @@ html[data-export-mode="export"] [data-export-ui] {
 
   html[data-export-mode="export"] [data-export-canvas],
   [data-export-canvas] {
-    width: var(--print-width) !important;
-    height: var(--print-height) !important;
+    width: var(--export-width) !important;
+    height: var(--export-height) !important;
+    transform-origin: top left !important;
+    transform: scale(var(--print-scale-x, 1), var(--print-scale-y, 1)) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
   }
